@@ -1,3 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Study, Subject
+
+
+@admin.register(Subject)
+class SubjectAdmin(admin.ModelAdmin):
+    ...
+
+
+@admin.register(Study)
+class StudyAdmin(admin.ModelAdmin):
+    ...

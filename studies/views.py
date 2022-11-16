@@ -1,5 +1,11 @@
 from django.shortcuts import render
 
+from .models import Study
+
 
 def home(request):
-    return render(request, 'studies/home.html')
+    studies = Study.objects.all()
+
+    return render(request, 'studies/home.html', context={
+        'studies': studies
+    })
