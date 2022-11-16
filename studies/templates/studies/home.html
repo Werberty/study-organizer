@@ -13,6 +13,13 @@
     <h1>Estudos</h1>
     <ul>
         <li>Domingo</li>
+        {% for study in studies %}
+            {% if study.weekday == 'Sunday' %}
+                <ul>
+                    <li>{{ study.subject }}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
         <li>Segunda-feira</li>
         {% for study in studies %}
             {% if study.weekday == 'Monday' %}
@@ -22,10 +29,45 @@
             {% endif %}
         {% endfor %}
         <li>Terça-feira</li>
+        {% for study in studies %}
+            {% if study.weekday == 'Tuesday' %}
+                <ul>
+                    <li>{{ study.subject }}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
         <li>Quarta-feira</li>
+        {% for study in studies %}
+            {% if study.weekday == 'Wednesday' %}
+                <ul>
+                    <li>{{ study.subject }}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
         <li>Quinta-feira</li>
+        {% for study in studies %}
+            {% if study.weekday == 'Thursday' %}
+                <ul>
+                    <li>{{ study.subject }}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
         <li>Sexta-feira</li>
+        {% for study in studies %}
+            {% if study.weekday == 'Friday' %}
+                <ul>
+                    <li>{{ study.subject }}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
         <li>Sábado</li>
+        {% for study in studies %}
+            {% if study.weekday == 'Saturday' %}
+                <ul>
+                    <li>{{ study.subject }}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
     </ul>
 </body>
 </html>
