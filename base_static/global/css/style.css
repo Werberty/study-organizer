@@ -55,6 +55,7 @@ a {
 .main-header {
     background: var(--ligth-gray);
     padding: 2rem;
+    box-shadow: 0 0 4px 1px;
 }
 
 .main-logo a {
@@ -72,6 +73,27 @@ a {
 
 .main-logo span {
     font-size: 3.2rem;
+}
+
+.new-study span,
+.new-study p {
+    display: inline-block;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.new-study button{
+    border: var(--border) solid var(--primary-color);
+    background: var(--white-color);
+    margin-bottom: 1rem;
+    padding: .2rem;
+    cursor: pointer;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2.5rem;
 }
 
 /* Week studies */
