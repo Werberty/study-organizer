@@ -7,6 +7,7 @@
     --white-color: #FFFFFF;
     --ligth-gray: #E5E5E5;
 
+    --border: .3rem;
     --gap: 3rem;
 }
 
@@ -39,11 +40,18 @@ a {
     color: var(--primary-color);
 }
 
+/* Class containers */
 .main-container {
     max-width: 120rem;
     margin: 0 auto;
 }
 
+.main-content {
+    padding: 3rem;
+    height: 88vh;
+}
+
+/* Header */
 .main-header {
     background: var(--ligth-gray);
     padding: 2rem;
@@ -66,11 +74,51 @@ a {
     font-size: 3.2rem;
 }
 
-.main-content {
-    padding: 3rem;
-    height: 88vh;
-}
-
+/* Week studies */
 .main-content h1 {
     text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main-week-studies {
+    width: 100%;
+    min-height: 30rem;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: .6rem;
+}
+
+.weekday {
+    border: var(--border) solid var(--primary-color);
+}
+
+.weekday-title {
+    text-align: center;
+    border-bottom: var(--border) solid var(--primary-color);
+    padding: .5rem;
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.weekday:nth-child(1) .weekday-title,
+.weekday:nth-child(7) .weekday-title {
+    background: var(--secundary-color);
+}
+
+.weekday-title h2 {
+    font-size: 1.8rem;
+}
+
+.weekday-content ul{
+    list-style: none;
+}
+
+.weekday-content ul li{
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 1rem;
+    padding: .8rem;
+    background: var(--tertiary-color);
 }

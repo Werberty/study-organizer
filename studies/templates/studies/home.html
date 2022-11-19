@@ -3,63 +3,107 @@
 {% block content %}
     <section class="main-content">
         <h1>Estudos</h1>
-        <ul>
-            <li>Domingo</li>
-            {% for study in studies %}
-                {% if study.weekday == 'Sunday' %}
-                    <ul>
-                        <li>{{ study.subject }}</li>
-                    </ul>
-                {% endif %}
-            {% endfor %}
-            <li>Segunda-feira</li>
-            {% for study in studies %}
-                {% if study.weekday == 'Monday' %}
-                    <ul>
-                        <li>{{ study.subject }}</li>
-                    </ul>
-                {% endif %}
-            {% endfor %}
-            <li>Terça-feira</li>
-            {% for study in studies %}
-                {% if study.weekday == 'Tuesday' %}
-                    <ul>
-                        <li>{{ study.subject }}</li>
-                    </ul>
-                {% endif %}
-            {% endfor %}
-            <li>Quarta-feira</li>
-            {% for study in studies %}
-                {% if study.weekday == 'Wednesday' %}
-                    <ul>
-                        <li>{{ study.subject }}</li>
-                    </ul>
-                {% endif %}
-            {% endfor %}
-            <li>Quinta-feira</li>
-            {% for study in studies %}
-                {% if study.weekday == 'Thursday' %}
-                    <ul>
-                        <li>{{ study.subject }}</li>
-                    </ul>
-                {% endif %}
-            {% endfor %}
-            <li>Sexta-feira</li>
-            {% for study in studies %}
-                {% if study.weekday == 'Friday' %}
-                    <ul>
-                        <li>{{ study.subject }}</li>
-                    </ul>
-                {% endif %}
-            {% endfor %}
-            <li>Sábado</li>
-            {% for study in studies %}
-                {% if study.weekday == 'Saturday' %}
-                    <ul>
-                        <li>{{ study.subject }}</li>
-                    </ul>
-                {% endif %}
-            {% endfor %}
-        </ul>
+
+        <article class="main-week-studies">
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Domingo</h2>
+                </div>
+                <div class="weekday-content">
+                    {% for study in studies %}
+                        {% if study.weekday == 'Sunday' %}
+                            <ul>
+                                <li>{{ study.subject }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Segunda</h2>
+                </div>
+                <div class="weekday-content">
+                    {% for study in studies %}
+                        {% if study.weekday == 'Monday' %}
+                            <ul>
+                                <li>{{ study.subject }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Terça</h2>
+                </div>
+                <div class="weekday-content">
+                    {% for study in studies %}
+                        {% if study.weekday == 'Tuesday' %}
+                            <ul>
+                                <li>{{ study.subject }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Quarta</h2>
+                </div>
+                <div class="weekday-content">
+                    {% for study in studies %}
+                        {% if study.weekday == 'Wednesday' %}
+                            <ul>
+                                <li>{{ study.subject }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Quinta</h2>
+                </div>
+                <div class="weekday-content">
+                    {% for study in studies %}
+                        {% if study.weekday == 'Thursday' %}
+                            <ul>
+                                <li>{{ study.subject }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Sexta</h2>
+                </div>
+                <div class="weekday-content">
+                    {% for study in studies %}
+                        {% if study.weekday == 'Friday' %}
+                            <ul>
+                                <li>{{ study.subject }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Sábado</h2>
+                </div>
+                <div class="weekday-content">
+                    {% for study in studies %}
+                        {% if study.weekday == 'Saturday' %}
+                            <ul>
+                                <li>{{ study.subject }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </article>
     </section>
 {% endblock content %}
