@@ -3,6 +3,7 @@
 {% block content %}
     <section class="main-content">
         <h1>Estudos</h1>
+
         <article class="main-buttons">
             <div class="new-study">
                 <label class="button open-modal" for="modal-new-study">
@@ -77,6 +78,7 @@
                 </div>
             </div>
         </article>
+
         <article class="main-week-studies">
             <div class="weekday">
                 <div class="weekday-title">
@@ -177,6 +179,20 @@
                 </div>
             </div>
         </article>
+
+        <article class="main-subjects-list">
+            <h3>Lista de assuntos</h3>
+            <div class="subjects-grid">
+                {% for subject in subjects %}
+                <div class="subject-content">
+                    <ul>
+                        <li>{{ subject.name }}</li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </article>
+
     </section>
 
 {% endblock content %}

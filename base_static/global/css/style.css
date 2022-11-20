@@ -100,6 +100,12 @@ a {
 
 /* Button New Study e new subject */
 
+.main-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
 .new-study span,
 .new-subject span,
 .new-study p, 
@@ -138,12 +144,6 @@ a {
 .new-subject .button:hover span {
     background-color: var(--primary-color);
     color: var(--white-color);
-}
-
-.main-buttons {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
 }
 
 /* Modal new study */
@@ -287,4 +287,38 @@ a {
     margin: 1rem;
     padding: .8rem;
     background: var(--tertiary-color);
+}
+
+/* Subjects list */
+.main-subjects-list {
+    width: 60%;
+    margin: auto;
+}
+
+.main-subjects-list h3 {
+    margin: 2rem 0 2rem 0;
+    text-align: center;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.subject-content ul{
+    list-style: none;
+}
+
+.subject-content ul li{
+    font-size: 1.6rem;
+    text-align: center;
+    padding: .8rem;
+    background: var(--tertiary-color);
+}
+
+@media (max-width: 800px) {
+    .main-week-studies {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
