@@ -98,26 +98,31 @@ a {
     border: var(--border) solid var(--secundary-color);
 }
 
-/* Button New Study */
+/* Button New Study e new subject */
 
 .new-study span,
-.new-study p {
+.new-subject span,
+.new-study p, 
+.new-subject p {
     display: inline-block;
     color: var(--primary-color);
     text-transform: uppercase;
     padding: 0rem 0.6rem;
 }
 
-.new-study p {
+.new-study p, 
+.new-subject p {
     font-size: 1.3rem;
 }
 
-.new-study span {
+.new-study span, 
+.new-subject span {
     border-right: 0.1rem solid var(--primary-color);
     transition: all 300ms ease-in-out;
 }
 
-.new-study .button{
+.new-study .button,
+.new-subject .button{
     border: var(--border) solid var(--primary-color);
     background: var(--white-color);
     margin-bottom: 1rem;
@@ -129,9 +134,16 @@ a {
     align-items: center;
 }
 
-.new-study .button:hover span {
+.new-study .button:hover span, 
+.new-subject .button:hover span {
     background-color: var(--primary-color);
     color: var(--white-color);
+}
+
+.main-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 
 /* Modal new study */
@@ -141,6 +153,10 @@ a {
 }
 
 #modal-new-study:checked + .modal{
+    display: flex;
+}
+
+#modal-new-subject:checked + .modal{
     display: flex;
 }
 
@@ -170,7 +186,7 @@ a {
 
 .modal .content-modal {
     width: 30%;
-    height: 70%;
+    height: auto;
     background-color: var(--white-color);
     border: var(--border) solid var(--primary-color);
     overflow: auto;
@@ -181,7 +197,7 @@ a {
     padding: none;
 }
 
-/* Form */
+/* Forms */
 .main-form {
     padding: 3rem;
 }
@@ -200,11 +216,15 @@ a {
     margin-bottom: .5rem;
 }
 
-.form-group select {
+.form-group select,
+.form-group input, 
+.form-group textarea {
     padding: .8rem;
     width: 100%;
     border: var(--border) solid var(--primary-color);
+}
 
+.form-group select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;

@@ -1,16 +1,18 @@
 from django.shortcuts import render
 
-from .forms import StudyForm
+from .forms import StudyForm, SubjectForm
 from .models import Study, Subject
 
 
 def home(request):
     studies = Study.objects.all()
-    form = StudyForm()
+    form_study = StudyForm()
+    form_subject = SubjectForm()
 
     return render(request, 'studies/home.html', context={
         'studies': studies,
-        'form': form,
+        'form_study': form_study,
+        'form_subject': form_subject,
     })
 
 

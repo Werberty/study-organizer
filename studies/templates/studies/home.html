@@ -3,44 +3,80 @@
 {% block content %}
     <section class="main-content">
         <h1>Estudos</h1>
-        <div class="new-study">
-            <label class="button open-modal" for="modal-new-study">
-                <span class="material-symbols-outlined add">add</span>
-                <p>Novo estudo</p>
-            </label>
-            <input type="checkbox" id="modal-new-study" class="checkbox-modal">
-            <div class="modal">
-                <label for="modal-new-study" class="close-modal">
-                    <span class="material-symbols-outlined cancel">
-                        close
-                    </span>
+        <article class="main-buttons">
+            <div class="new-study">
+                <label class="button open-modal" for="modal-new-study">
+                    <span class="material-symbols-outlined add">add</span>
+                    <p>Novo estudo</p>
                 </label>
-                <div class="content-modal">
-
-                    <div class="main-form">
-                        <form action="#" method="POST">
-                            {% csrf_token %}
-                            <div class="form-content form-content-grid">
-                                {% for field in form %}
-                                <div class="form-group">
-                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                    {{ field }}
-
-                                    {{ field.errors }}
+                <input type="checkbox" id="modal-new-study" class="checkbox-modal">
+                <div class="modal">
+                    <label for="modal-new-study" class="close-modal">
+                        <span class="material-symbols-outlined cancel">
+                            close
+                        </span>
+                    </label>
+                    <div class="content-modal">
+                        <div class="main-form">
+                            <form action="#" method="POST">
+                                {% csrf_token %}
+                                <div class="form-content form-content-grid">
+                                    {% for field in form_study %}
+                                    <div class="form-group">
+                                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        {{ field }}
+            
+                                        {{ field.errors }}
+                                    </div>
+                                    {% endfor %}
                                 </div>
-                                {% endfor %}
-                            </div>
-                            <div class="form-content form-content-grid">
-                                <div class="form-group">
-                                    <button class="button-generic" type="submit">Adicionar</button>
+                                <div class="form-content form-content-grid">
+                                    <div class="form-group">
+                                        <button class="button-generic" type="submit">Adicionar</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-
                 </div>
             </div>
-        </div>
+            <div class="new-subject">
+                <label class="button open-modal" for="modal-new-subject">
+                    <span class="material-symbols-outlined add">add</span>
+                    <p>Novo assunto</p>
+                </label>
+                <input type="checkbox" id="modal-new-subject" class="checkbox-modal">
+                <div class="modal">
+                    <label for="modal-new-subject" class="close-modal">
+                        <span class="material-symbols-outlined cancel">
+                            close
+                        </span>
+                    </label>
+                    <div class="content-modal">
+                        <div class="main-form">
+                            <form action="#" method="POST">
+                                {% csrf_token %}
+                                <div class="form-content form-content-grid">
+                                    {% for field in form_subject %}
+                                    <div class="form-group">
+                                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        {{ field }}
+            
+                                        {{ field.errors }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="form-content form-content-grid">
+                                    <div class="form-group">
+                                        <button class="button-generic" type="submit">Adicionar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
         <article class="main-week-studies">
             <div class="weekday">
                 <div class="weekday-title">
