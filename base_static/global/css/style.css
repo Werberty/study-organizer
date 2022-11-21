@@ -146,7 +146,7 @@ a {
     color: var(--white-color);
 }
 
-/* Modal new study */
+/* Modal new study e subject */
 
 .checkbox-modal {
     display: none;
@@ -173,9 +173,15 @@ a {
     background-color: rgba(211, 211, 211, 0.452);
 }
 
-.modal .close-modal {
+.new-study .modal .close-modal {
     position: absolute;
-    top: 16%;
+    top: 30%;
+    right: 35%;
+}
+
+.new-subject .modal .close-modal {
+    position: absolute;
+    top: 20%;
     right: 35%;
 }
 

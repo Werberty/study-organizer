@@ -19,7 +19,7 @@
                     </label>
                     <div class="content-modal">
                         <div class="main-form">
-                            <form action="#" method="POST">
+                            <form action="{% url 'studies:create_study' %}" method="POST">
                                 {% csrf_token %}
                                 <div class="form-content form-content-grid">
                                     {% for field in form_study %}
@@ -55,7 +55,7 @@
                     </label>
                     <div class="content-modal">
                         <div class="main-form">
-                            <form action="#" method="POST">
+                            <form action="{% url 'studies:create_subject' %}" method="POST">
                                 {% csrf_token %}
                                 <div class="form-content form-content-grid">
                                     {% for field in form_subject %}
