@@ -48,7 +48,7 @@ a {
 
 .main-content {
     padding: 3rem;
-    height: 88vh;
+    /* height: 88vh; */
 }
 
 /* Header */
@@ -254,7 +254,6 @@ a {
 
 .main-week-studies {
     width: 100%;
-    min-height: 30rem;
     margin: auto;
 
     display: grid;
@@ -264,6 +263,7 @@ a {
 
 .weekday {
     border: var(--border) solid var(--primary-color);
+    min-height: 30rem;
 }
 
 .weekday-title {
@@ -283,6 +283,10 @@ a {
     font-size: 1.8rem;
 }
 
+.weekday-content {
+    min-height: 20rem;
+}
+
 .weekday-content ul{
     list-style: none;
 }
@@ -292,10 +296,43 @@ a {
     text-align: center;
     margin: 1rem;
     padding: .8rem;
-    background: var(--tertiary-color);
+    /* background: var(--tertiary-color); */
 }
 
 /* Subjects list */
+
+.vermelho {
+    background: #ffa5a5;
+}
+
+.azul {
+    background: var(--tertiary-color);
+}
+
+.verde {
+    background: #a5ffbb;
+}
+
+.amarelo {
+    background: #fdffa5;
+}
+
+.subject-color option[value="azul"] {
+    background-color: #A5E2FF;
+}
+
+.subject-color option[value="verde"] {
+    background-color: #a5ffbb;
+}
+
+.subject-color option[value="vermelho"] {
+    background-color: #ffa5a5;
+}
+
+.subject-color option[value="amarelo"] {
+    background-color: #fdffa5;
+}
+
 .main-subjects-list {
     width: 60%;
     margin: auto;
@@ -320,7 +357,6 @@ a {
     font-size: 1.6rem;
     text-align: center;
     padding: .8rem;
-    background: var(--tertiary-color);
 }
 
 @media (max-width: 800px) {

@@ -2,7 +2,15 @@ from django.db import models
 
 
 class Subject(models.Model):
+    CHOICES = (
+        ('azul', 'azul'),
+        ('verde', 'verde'),
+        ('vermelho', 'vermelho'),
+        ('amarelo', 'amarelo'),
+    )
+
     name = models.CharField(max_length=255)
+    color = models.CharField(max_length=8, choices=CHOICES, default='azul')
     contents = models.TextField(blank=True, null=True)
 
     def __str__(self):
