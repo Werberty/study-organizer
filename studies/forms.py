@@ -10,6 +10,10 @@ class StudyForm(forms.ModelForm):
             'weekday',
             'subject',
         )
+        labels = {
+            'weekday': 'Dia da semana',
+            'subject': 'Assunto',
+        }
 
 
 class SubjectForm(forms.ModelForm):

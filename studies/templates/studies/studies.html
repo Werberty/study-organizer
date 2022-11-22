@@ -89,7 +89,17 @@
                     {% for study in studies %}
                         {% if study.weekday == 'Sunday' %}
                             <ul>
-                                <li class="{{ study.subject.color }}">{{ study.subject }}</li>
+                                <li class="{{ study.subject.color }}">
+                                    {{ study.subject }} 
+                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="id-subject">
+                                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
                             </ul>
                         {% endif %}
                     {% endfor %}
@@ -103,7 +113,17 @@
                     {% for study in studies %}
                         {% if study.weekday == 'Monday' %}
                             <ul>
-                                <li class="{{ study.subject.color }}">{{ study.subject }}</li>
+                                <li class="{{ study.subject.color }}">
+                                    {{ study.subject }} 
+                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="id-subject">
+                                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
                             </ul>
                         {% endif %}
                     {% endfor %}
@@ -117,7 +137,17 @@
                     {% for study in studies %}
                         {% if study.weekday == 'Tuesday' %}
                             <ul>
-                                <li class="{{ study.subject.color }}">{{ study.subject }}</li>
+                                <li class="{{ study.subject.color }}">
+                                    {{ study.subject }} 
+                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="id-subject">
+                                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
                             </ul>
                         {% endif %}
                     {% endfor %}
@@ -131,7 +161,17 @@
                     {% for study in studies %}
                         {% if study.weekday == 'Wednesday' %}
                             <ul>
-                                <li class="{{ study.subject.color }}">{{ study.subject }}</li>
+                                <li class="{{ study.subject.color }}">
+                                    {{ study.subject }} 
+                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="id-subject">
+                                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
                             </ul>
                         {% endif %}
                     {% endfor %}
@@ -145,7 +185,17 @@
                     {% for study in studies %}
                         {% if study.weekday == 'Thursday' %}
                             <ul>
-                                <li class="{{ study.subject.color }}">{{ study.subject }}</li>
+                                <li class="{{ study.subject.color }}">
+                                    {{ study.subject }} 
+                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="id-subject">
+                                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
                             </ul>
                         {% endif %}
                     {% endfor %}
@@ -159,7 +209,17 @@
                     {% for study in studies %}
                         {% if study.weekday == 'Friday' %}
                             <ul>
-                                <li class="{{ study.subject.color }}">{{ study.subject }}</li>
+                                <li class="{{ study.subject.color }}">
+                                    {{ study.subject }} 
+                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="id-subject">
+                                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
                             </ul>
                         {% endif %}
                     {% endfor %}
@@ -173,7 +233,17 @@
                     {% for study in studies %}
                         {% if study.weekday == 'Saturday' %}
                             <ul>
-                                <li class="{{ study.subject.color }}"{{ study.subject }}</li>
+                                <li class="{{ study.subject.color }}">
+                                    {{ study.subject }} 
+                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="id-subject">
+                                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
                             </ul>
                         {% endif %}
                     {% endfor %}

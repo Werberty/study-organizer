@@ -171,6 +171,7 @@ a {
     width: 100%;
     height: 100%;
     background-color: rgba(211, 211, 211, 0.452);
+    z-index: 1;
 }
 
 .new-study .modal .close-modal {
@@ -296,7 +297,37 @@ a {
     text-align: center;
     margin: 1rem;
     padding: .8rem;
-    /* background: var(--tertiary-color); */
+}
+
+/* Form delete */
+.plaintext-button {
+    display: inline;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.form-delete {
+    display: inline;
+}
+
+.weekday-content li {
+    position: relative;
+}
+
+.weekday-content li span {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    position: absolute;
+    top: 25%;
+    right: 2px;
+    transition: all 300ms ease-in-out;
+}
+
+.weekday-content li:hover span {
+    display: block;
 }
 
 /* Subjects list */

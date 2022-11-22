@@ -19,13 +19,13 @@ class Subject(models.Model):
 
 class Study(models.Model):
     CHOICES = (
-        ('Sunday', 'Sunday'),
-        ('Monday', 'Monday'),
-        ('Tuesday', 'Tuesday'),
-        ('Wednesday', 'Wednesday'),
-        ('Thursday', 'Thursday'),
-        ('Friday', 'Friday'),
-        ('Saturday', 'Saturday'),
+        ('Sunday', 'Domingo'),
+        ('Monday', 'Segunda-feira'),
+        ('Tuesday', 'Terça-feira'),
+        ('Wednesday', 'Quarta-feira'),
+        ('Thursday', 'Quinta-feira'),
+        ('Friday', 'Sexta-feira'),
+        ('Saturday', 'Sábado'),
     )
 
     weekday = models.CharField(max_length=9, choices=CHOICES)
