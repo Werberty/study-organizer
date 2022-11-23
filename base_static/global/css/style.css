@@ -398,4 +398,8 @@ ul {
     .main-week-studies {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .modal .content-modal {
+        width: 80%;
+    }
 }
