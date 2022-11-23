@@ -7,6 +7,11 @@
     --white-color: #FFFFFF;
     --ligth-gray: #f1f1f1;
 
+    --subject-color-green: #c1fcef; 
+    --subject-color-blue: #c1eefc; 
+    --subject-color-red: #fcc1c1; 
+    --subject-color-yellow: #fcf8c1; 
+
     --border: .3rem;
     --gap: 3rem;
 }
@@ -338,39 +343,41 @@ ul {
     display: block;
 }
 
-/* Subjects list */
+/* Subjects colors */
 
 .vermelho {
-    background: #ffa5a5;
+    background: var(--subject-color-red);
 }
 
 .azul {
-    background: var(--tertiary-color);
+    background: var(--subject-color-blue);
 }
 
 .verde {
-    background: #a5ffbb;
+    background: var(--subject-color-green);
 }
 
 .amarelo {
-    background: #fdffa5;
+    background: var(--subject-color-yellow);
 }
 
 .subject-color option[value="azul"] {
-    background-color: #A5E2FF;
+    background-color: var(--subject-color-blue);
 }
 
 .subject-color option[value="verde"] {
-    background-color: #a5ffbb;
+    background-color: var(--subject-color-green);
 }
 
 .subject-color option[value="vermelho"] {
-    background-color: #ffa5a5;
+    background-color: var(--subject-color-red);
 }
 
 .subject-color option[value="amarelo"] {
-    background-color: #fdffa5;
+    background-color: var(--subject-color-yellow);
 }
+
+/* Subjects list */
 
 .main-subjects-list {
     width: 60%;

@@ -4,8 +4,8 @@ from django.db import models
 class Subject(models.Model):
     CHOICES = (
         ('azul', 'azul'),
-        ('verde', 'verde'),
         ('vermelho', 'vermelho'),
+        ('verde', 'verde'),
         ('amarelo', 'amarelo'),
     )
 
