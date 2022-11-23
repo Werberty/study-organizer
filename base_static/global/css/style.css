@@ -12,7 +12,7 @@
     --subject-color-red: #fcc1c1; 
     --subject-color-yellow: #fcf8c1; 
 
-    --border: .3rem;
+    --border: .2rem;
     --gap: 3rem;
 }
 
@@ -47,6 +47,10 @@ a {
 
 ul {
     list-style: none;
+}
+
+.inline {
+    display: inline;
 }
 
 /* Class containers */
@@ -295,6 +299,12 @@ ul {
 
 .weekday-content {
     min-height: 20rem;
+    text-transform: capitalize;
+}
+
+.weekday-content .subject-time{
+    font-size: 1.2rem;
+    padding-top: .5rem;
 }
 
 .weekday-content ul{
@@ -306,6 +316,11 @@ ul {
     text-align: center;
     margin: .5rem;
     padding: .8rem;
+}
+
+.weekday-subject {
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 /* Form delete */

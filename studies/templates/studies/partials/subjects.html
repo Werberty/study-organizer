@@ -1,0 +1,21 @@
+<li class="weekday-subject {{ study.subject.color }}">
+    <div class="subject-title">
+        {{ study.subject }}
+        
+        <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="id-subject">
+            
+            <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                close
+                </span></button>
+        </form>
+    </div>
+    
+    {% if study.start_time and study.end_time %}
+        <div class="subject-time">
+            {{ study.start_time }} - {{ study.end_time }}
+        </div>
+    {% endif %}
+
+</li>

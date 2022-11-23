@@ -12,7 +12,7 @@ def studies(request):
     form_study = StudyForm()
     form_subject = SubjectForm()
 
-    return render(request, 'studies/studies.html', context={
+    return render(request, 'studies/pages/studies.html', context={
         'studies': studies,
         'subjects': subjects,
         'form_study': form_study,
