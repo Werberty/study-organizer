@@ -1,10 +1,11 @@
-from django.test import TestCase
 from django.urls import resolve, reverse
 
 from studies.views import home
 
+from .test_studies_base import StudiesBaseTest
 
-class StudiesHomeViewsTest(TestCase):
+
+class StudiesHomeViewsTest(StudiesBaseTest):
     def test_studies_home_view_function_is_correct(self):
         view = resolve(reverse('studies:home'))
         self.assertIs(view.func, home)
@@ -16,3 +17,13 @@ class StudiesHomeViewsTest(TestCase):
     def test_studies_home_view_loads_correct_template(self):
         response = self.client.get(reverse('studies:home'))
         self.assertTemplateUsed(response, 'studies/pages/studies.html')
+
+    def test_studies_home_templates_loads_studies(self):
+        self.make_study(subject={'name': 'Matemática'})
+
+        response = self.client.get(reverse('studies:home'))
+        content = response.content.decode('utf-8')
+        response_context_studies = response.context['studies']
+
+        self.assertIn('Matemática', content)
+        self.assertEqual(len(response_context_studies), 1)
