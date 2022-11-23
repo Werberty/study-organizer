@@ -7,7 +7,7 @@ from .models import Study, Subject
 
 
 def studies(request):
-    studies = Study.objects.all()
+    studies = Study.objects.all().order_by('start_time')
     subjects = Subject.objects.all()
     form_study = StudyForm()
     form_subject = SubjectForm()
