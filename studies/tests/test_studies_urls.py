@@ -4,7 +4,7 @@ from django.urls import reverse
 
 class StudiesURLsTest(TestCase):
     def test_studies_studies_urls_is_correct(self):
-        url = reverse('studies:studies')
+        url = reverse('studies:home')
         self.assertEqual(url, '/')
 
     def test_studies_create_study_urls_is_correct(self):

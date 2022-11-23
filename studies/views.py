@@ -6,7 +6,7 @@ from .forms import StudyForm, SubjectForm
 from .models import Study, Subject
 
 
-def studies(request):
+def home(request):
     studies = Study.objects.all().order_by('start_time')
     subjects = Subject.objects.all()
     form_study = StudyForm()
@@ -29,7 +29,7 @@ def create_study(request):
     if form.is_valid():
         form.save()
 
-    return redirect(reverse('studies:studies'))
+    return redirect(reverse('studies:home'))
 
 
 def create_subject(request):
@@ -41,7 +41,7 @@ def create_subject(request):
     if form.is_valid():
         form.save()
 
-    return redirect(reverse('studies:studies'))
+    return redirect(reverse('studies:home'))
 
 
 def delete_study(request, id):
@@ -49,7 +49,7 @@ def delete_study(request, id):
 
     study.delete()
 
-    return redirect(reverse('studies:studies'))
+    return redirect(reverse('studies:home'))
 
 
 def delete_subject(request, id):
@@ -57,7 +57,7 @@ def delete_subject(request, id):
 
     subject.delete()
 
-    return redirect(reverse('studies:studies'))
+    return redirect(reverse('studies:home'))
 
 
 def subject(request, id):
