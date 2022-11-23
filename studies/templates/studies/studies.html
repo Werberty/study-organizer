@@ -86,23 +86,23 @@
                     <h2>Domingo</h2>
                 </div>
                 <div class="weekday-content">
+                    <ul>
                     {% for study in studies %}
                         {% if study.weekday == 'Sunday' %}
-                            <ul>
-                                <li class="{{ study.subject.color }}">
-                                    {{ study.subject }} 
-                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="id" value="id-subject">
-                                        
-                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
-                                            close
-                                            </span></button>
-                                    </form>
-                                </li>
-                            </ul>
+                        <li class="{{ study.subject.color }}">
+                            {{ study.subject }} 
+                            <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="id-subject">
+                                
+                                <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                    close
+                                    </span></button>
+                            </form>
+                        </li>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="weekday">
@@ -110,23 +110,23 @@
                     <h2>Segunda</h2>
                 </div>
                 <div class="weekday-content">
+                    <ul>
                     {% for study in studies %}
                         {% if study.weekday == 'Monday' %}
-                            <ul>
-                                <li class="{{ study.subject.color }}">
-                                    {{ study.subject }} 
-                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="id" value="id-subject">
-                                        
-                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
-                                            close
-                                            </span></button>
-                                    </form>
-                                </li>
-                            </ul>
+                        <li class="{{ study.subject.color }}">
+                            {{ study.subject }} 
+                            <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="id-subject">
+                                
+                                <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                    close
+                                    </span></button>
+                            </form>
+                        </li>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="weekday">
@@ -134,23 +134,23 @@
                     <h2>Terça</h2>
                 </div>
                 <div class="weekday-content">
+                    <ul>
                     {% for study in studies %}
                         {% if study.weekday == 'Tuesday' %}
-                            <ul>
-                                <li class="{{ study.subject.color }}">
-                                    {{ study.subject }} 
-                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="id" value="id-subject">
-                                        
-                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
-                                            close
-                                            </span></button>
-                                    </form>
-                                </li>
-                            </ul>
+                        <li class="{{ study.subject.color }}">
+                            {{ study.subject }} 
+                            <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="id-subject">
+                                
+                                <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                    close
+                                    </span></button>
+                            </form>
+                        </li>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="weekday">
@@ -158,23 +158,23 @@
                     <h2>Quarta</h2>
                 </div>
                 <div class="weekday-content">
+                    <ul>
                     {% for study in studies %}
                         {% if study.weekday == 'Wednesday' %}
-                            <ul>
-                                <li class="{{ study.subject.color }}">
-                                    {{ study.subject }} 
-                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="id" value="id-subject">
-                                        
-                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
-                                            close
-                                            </span></button>
-                                    </form>
-                                </li>
-                            </ul>
+                        <li class="{{ study.subject.color }}">
+                            {{ study.subject }} 
+                            <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="id-subject">
+                                
+                                <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                    close
+                                    </span></button>
+                            </form>
+                        </li>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="weekday">
@@ -182,23 +182,23 @@
                     <h2>Quinta</h2>
                 </div>
                 <div class="weekday-content">
+                    <ul>
                     {% for study in studies %}
                         {% if study.weekday == 'Thursday' %}
-                            <ul>
-                                <li class="{{ study.subject.color }}">
-                                    {{ study.subject }} 
-                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="id" value="id-subject">
-                                        
-                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
-                                            close
-                                            </span></button>
-                                    </form>
-                                </li>
-                            </ul>
+                        <li class="{{ study.subject.color }}">
+                            {{ study.subject }} 
+                            <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="id-subject">
+                                
+                                <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                    close
+                                    </span></button>
+                            </form>
+                        </li>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="weekday">
@@ -206,23 +206,23 @@
                     <h2>Sexta</h2>
                 </div>
                 <div class="weekday-content">
+                    <ul>
                     {% for study in studies %}
                         {% if study.weekday == 'Friday' %}
-                            <ul>
-                                <li class="{{ study.subject.color }}">
-                                    {{ study.subject }} 
-                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="id" value="id-subject">
-                                        
-                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
-                                            close
-                                            </span></button>
-                                    </form>
-                                </li>
-                            </ul>
+                        <li class="{{ study.subject.color }}">
+                            {{ study.subject }} 
+                            <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="id-subject">
+                                
+                                <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                    close
+                                    </span></button>
+                            </form>
+                        </li>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="weekday">
@@ -230,23 +230,23 @@
                     <h2>Sábado</h2>
                 </div>
                 <div class="weekday-content">
+                    <ul>
                     {% for study in studies %}
                         {% if study.weekday == 'Saturday' %}
-                            <ul>
-                                <li class="{{ study.subject.color }}">
-                                    {{ study.subject }} 
-                                    <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="id" value="id-subject">
-                                        
-                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
-                                            close
-                                            </span></button>
-                                    </form>
-                                </li>
-                            </ul>
+                        <li class="{{ study.subject.color }}">
+                            {{ study.subject }} 
+                            <form class="form-delete inline" action="{% url 'studies:delete_study' study.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="id-subject">
+                                
+                                <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                    close
+                                    </span></button>
+                            </form>
+                        </li>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </article>
@@ -254,13 +254,23 @@
         <article class="main-subjects-list">
             <h3>Lista de assuntos</h3>
             <div class="subjects-grid">
-                {% for subject in subjects %}
-                <div class="subject-content {{ subject.color }}">
-                    <ul>
-                        <li>{{ subject.name }}</li>
-                    </ul>
-                </div>
-                {% endfor %}
+                <ul>
+                    {% for subject in subjects %}
+                    <div class="subject-content {{ subject.color }}">
+                            <li>
+                                {{ subject.name }}
+                                <form class="form-delete inline" action="{% url 'studies:delete_subject' subject.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id" value="id-subject">
+                                    
+                                    <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                        close
+                                        </span></button>
+                                </form>
+                            </li>
+                    </div>
+                    {% endfor %}
+                </ul>
             </div>
         </article>
 

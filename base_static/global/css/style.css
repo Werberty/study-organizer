@@ -40,6 +40,10 @@ a {
     color: var(--primary-color);
 }
 
+ul {
+    list-style: none;
+}
+
 /* Class containers */
 .main-container {
     max-width: 120rem;
@@ -295,7 +299,7 @@ a {
 .weekday-content ul li{
     font-size: 1.6rem;
     text-align: center;
-    margin: 1rem;
+    margin: .5rem;
     padding: .8rem;
 }
 
@@ -311,14 +315,17 @@ a {
     display: inline;
 }
 
-.weekday-content li {
+.weekday-content li,
+.subject-content li {
     position: relative;
 }
 
-.weekday-content li span {
+.weekday-content li span,
+.subject-content li span {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--primary-color);
 
     position: absolute;
     top: 25%;
@@ -326,7 +333,8 @@ a {
     transition: all 300ms ease-in-out;
 }
 
-.weekday-content li:hover span {
+.weekday-content li:hover span,
+.subject-content li:hover span {
     display: block;
 }
 
@@ -374,17 +382,13 @@ a {
     text-align: center;
 }
 
-.subjects-grid {
+.subjects-grid ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
-.subject-content ul{
-    list-style: none;
-}
-
-.subject-content ul li{
+.subject-content li{
     font-size: 1.6rem;
     text-align: center;
     padding: .8rem;

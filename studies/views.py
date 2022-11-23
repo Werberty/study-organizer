@@ -52,6 +52,14 @@ def delete_study(request, id):
     return redirect(reverse('studies:studies'))
 
 
+def delete_subject(request, id):
+    subject = Subject.objects.get(id=id)
+
+    subject.delete()
+
+    return redirect(reverse('studies:studies'))
+
+
 def subject(request, id):
     subject = Subject.objects.get(id=id)
     return render(request, 'studies/subject.html', context={
