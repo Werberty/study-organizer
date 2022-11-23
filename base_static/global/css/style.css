@@ -189,13 +189,13 @@ ul {
 
 .new-study .modal .close-modal {
     position: absolute;
-    top: 30%;
+    top: 18%;
     right: 35%;
 }
 
 .new-subject .modal .close-modal {
     position: absolute;
-    top: 20%;
+    top: 15%;
     right: 35%;
 }
 
@@ -236,19 +236,25 @@ ul {
     margin-bottom: .5rem;
 }
 
+.form-group select:required,
+.form-group textarea:required,
+.form-group input:required {
+    border: var(--border) solid var(--primary-color);
+}
+
 .form-group select,
 .form-group input, 
 .form-group textarea {
     padding: .8rem;
     width: 100%;
-    border: var(--border) solid var(--primary-color);
+    border: var(--border) solid lightgray;
 }
 
 .form-group select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: url(../img/arrow_drop_down_FILL0_wght400_GRAD0_opsz48.png) no-repeat center right var(--ligth-gray);
+    background: url(../img/arrow_drop_down_FILL0_wght400_GRAD0_opsz48.png) no-repeat center right;
     background-size: 3rem 3rem;
 }
 

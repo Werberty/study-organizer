@@ -24,7 +24,8 @@
                                 <div class="form-content form-content-grid">
                                     {% for field in form_study %}
                                     <div class="form-group">
-                                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        {{ field.label_tag }}
+
                                         {{ field }}
             
                                         {{ field.errors }}
@@ -60,7 +61,8 @@
                                 <div class="form-content form-content-grid">
                                     {% for field in form_subject %}
                                     <div class="form-group">
-                                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        {{ field.label_tag }}
+                                        
                                         {{ field }}
             
                                         {{ field.errors }}
@@ -187,7 +189,7 @@
                         {% if study.weekday == 'Saturday' %}
 
                             {% include 'studies/partials/subjects.html' %}
-                            
+
                         {% endif %}
                         {% endfor %}
                     </ul>
