@@ -30,6 +30,8 @@ class Study(models.Model):
 
     weekday = models.CharField(max_length=9, choices=CHOICES)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    start_time = models.TimeField(blank=True, null=True)
+    end_time = models.TimeField(blank=True, null=True)
 
     def __str__(self):
         return f'{self.weekday} {self.subject}'

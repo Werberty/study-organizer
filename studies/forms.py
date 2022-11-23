@@ -9,17 +9,32 @@ class StudyForm(forms.ModelForm):
         fields = (
             'weekday',
             'subject',
+            'start_time',
+            'end_time',
         )
         labels = {
             'weekday': 'Dia da semana',
             'subject': 'Assunto',
+            'start_time': 'Hora de início',
+            'end_time': 'Hora de término',
+        }
+        widgets = {
+            'start_time': forms.TimeInput(
+                format='%H:%M',
+                attrs={
+                    'type': 'time',
+                }
+            ),
+            'end_time': forms.TimeInput(
+                format='%H:%M',
+                attrs={
+                    'type': 'time',
+                }
+            )
         }
 
 
 class SubjectForm(forms.ModelForm):
-    # color = forms.CharField(
-
-    # )
 
     class Meta:
         model = Subject
