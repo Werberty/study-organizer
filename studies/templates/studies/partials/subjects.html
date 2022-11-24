@@ -16,6 +16,10 @@
         <div class="subject-time">
             {{ study.start_time }} - {{ study.end_time }}
         </div>
+    {% elif study.start_time %}
+        <div class="subject-time">
+            {{ study.start_time }}
+        </div>
     {% endif %}
 
 </li>

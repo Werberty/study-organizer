@@ -4,6 +4,8 @@
     <section class="main-content">
         <h1>Estudos</h1>
 
+        {% include 'global/partials/messages.html' %}
+
         <article class="main-buttons">
             <div class="new-study">
                 <label class="button open-modal" for="modal-new-study">
@@ -62,7 +64,7 @@
                                     {% for field in form_subject %}
                                     <div class="form-group">
                                         {{ field.label_tag }}
-                                        
+
                                         {{ field }}
             
                                         {{ field.errors }}

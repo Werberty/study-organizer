@@ -279,6 +279,51 @@ ul {
     margin-top: .5rem;
 }
 
+/* Messages Alerts */
+.messages-container {
+    display: flex;
+    flex-flow: column wrap;
+    gap: var(--gap);
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  background: var(--ligth-gray);
+  color: var(--primary-color);
+}
+
+.message-error {
+    background: var(--color-error-dark);
+    color: var(--primary-color);
+}
+
+.message-success {
+    background: var(--subject-color-green);
+    color: var(--primary-color);
+}
+
+.message-warning {
+    background: var(--color-warning-dark);
+    color: var(--white-color);
+}
+
+.message-alert {
+    background: var(--color-alert-dark);
+    color: var(--white-color);
+}
+
+.message-info {
+    background: var(--color-info-dark);
+    color: var(--white-color);
+}
+
+.message-debug {
+  background: var(--color-debug-dark);
+  color: var(--white-color);
+}
+
 /* Week studies */
 .main-content h1 {
     text-align: center;

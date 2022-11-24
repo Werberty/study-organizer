@@ -5,7 +5,7 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const confirmed = confirm('Tem certeza?');
+            const confirmed = confirm('Quer deletar mesmo?');
 
             if (confirmed) {
                 form.submit();
