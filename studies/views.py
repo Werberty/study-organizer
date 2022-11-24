@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -9,8 +10,12 @@ from .models import Study, Subject
 def home(request):
     studies = Study.objects.all().order_by('start_time')
     subjects = Subject.objects.all()
-    form_study = StudyForm()
-    form_subject = SubjectForm()
+
+    studies_form_data = request.session.get('studies_form_data') or None
+    subject_form_data = request.session.get('subject_form_data') or None
+
+    form_study = StudyForm(studies_form_data)
+    form_subject = SubjectForm(subject_form_data)
 
     return render(request, 'studies/pages/studies.html', context={
         'studies': studies,
@@ -24,10 +29,14 @@ def create_study(request):
     if not request.POST:
         raise Http404()
 
-    form = StudyForm(request.POST)
+    POST = request.POST
+    request.session['studies_form_data'] = POST
+    form = StudyForm(POST)
 
     if form.is_valid():
         form.save()
+        del (request.session['studies_form_data'])
+        messages.success(request, 'Sucesso!')
 
     return redirect(reverse('studies:home'))
 
@@ -36,10 +45,14 @@ def create_subject(request):
     if not request.POST:
         raise Http404()
 
+    POST = request.POST
+    request.session['subject_form_data'] = POST
     form = SubjectForm(request.POST)
 
     if form.is_valid():
         form.save()
+        del (request.session['subject_form_data'])
+        messages.success(request, 'Sucesso!')
 
     return redirect(reverse('studies:home'))
 

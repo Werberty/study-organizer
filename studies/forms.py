@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
 from .models import Study, Subject
 
@@ -33,6 +34,20 @@ class StudyForm(forms.ModelForm):
             )
         }
 
+    def clean(self):
+        cleaned_data = super().clean()
+
+        start_time = cleaned_data.get('start_time', None)
+        end_time = cleaned_data.get('end_time', None)
+
+        if end_time is not None and start_time is None:
+            raise ValidationError(
+                'Necessário horário de início e final',
+                code='invalid'
+            )
+
+        return super().clean()
+
 
 class SubjectForm(forms.ModelForm):
 
@@ -43,11 +58,21 @@ class SubjectForm(forms.ModelForm):
             'contents',
             'color',
         )
+        labels = {
+            'name': 'Nome',
+            'contents': 'Conteudos',
+            'color': 'Cor da tag'
+        }
         widgets = {
             'color': forms.Select(
                 attrs={
                     'class': 'subject-color',
                     'type': 'color'
+                }
+            ),
+            'name': forms.TextInput(
+                attrs={
+                    'placeholder': 'Nome da matéria'
                 }
             )
         }
