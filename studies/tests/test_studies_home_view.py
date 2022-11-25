@@ -27,3 +27,14 @@ class StudiesHomeViewsTest(StudiesBaseTest):
 
         self.assertIn('Matemática', content)
         self.assertEqual(len(response_context_studies), 1)
+
+    def test_studies_home_template_dont_loads_subjects_not_exist(self):
+
+        response = self.client.get(reverse('studies:home'))
+
+        self.assertIn(
+            'Nenhum assunto encontrado. '
+            'Adicione um novo assunto para '
+            'começar a organizar seus estudos.',
+            response.content.decode('utf-8')
+        )
