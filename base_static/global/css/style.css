@@ -56,6 +56,10 @@ ul {
     list-style: none;
 }
 
+.center {
+    text-align: center;
+}
+
 .inline {
     display: inline;
 }
@@ -78,7 +82,7 @@ ul {
     box-shadow: 0 0 4px 1px;
 }
 
-.main-logo a {
+.main-logo {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -472,6 +476,12 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+}
+
+.subjects-grid p {
+    grid-column: 1 / 4;
+    font-size: 1.6rem;
+    font-style: italic;
 }
 
 .subject-content li{

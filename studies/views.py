@@ -36,7 +36,7 @@ def create_study(request):
     if form.is_valid():
         form.save()
         del (request.session['studies_form_data'])
-        messages.success(request, 'Sucesso!')
+        messages.success(request, 'Estudo programado')
     else:
         messages.error(request, 'Erro no formulário!')
 
@@ -54,7 +54,7 @@ def create_subject(request):
     if form.is_valid():
         form.save()
         del (request.session['subject_form_data'])
-        messages.success(request, 'Sucesso!')
+        messages.success(request, 'Assunto adicionado')
     else:
         messages.error(request, 'Erro no formulário!')
 
@@ -65,7 +65,7 @@ def delete_study(request, id):
     study = Study.objects.get(id=id)
 
     study.delete()
-    messages.success(request, 'Deletado com sucesso!')
+    messages.info(request, 'Deletado com sucesso!')
 
     return redirect(reverse('studies:home'))
 
@@ -74,7 +74,7 @@ def delete_subject(request, id):
     subject = Subject.objects.get(id=id)
 
     subject.delete()
-    messages.success(request, 'Deletado com sucesso!')
+    messages.info(request, 'Deletado com sucesso!')
 
     return redirect(reverse('studies:home'))
 
