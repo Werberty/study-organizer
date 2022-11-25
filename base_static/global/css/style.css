@@ -1,16 +1,29 @@
 @charset "UTF-8";
 
 :root {
-    --primary-color: #080099;
-    --secundary-color: #FD5C63;
+    /* Ligth mode */
+    --primary-color: #1B1C2D;
+    --secundary-color: #35216E;
     --tertiary-color: #A5E2FF;
     --white-color: #FFFFFF;
     --ligth-gray: #f1f1f1;
+    
+    /* Dark mode */
+    /* --primary-color: #FDFDFE;
+    --secundary-color: #35216E;
+    --tertiary-color: #A5E2FF;
+    --white-color: #1B1C2D;
+    --ligth-gray: #f1f1f1; */
 
-    --subject-color-green: #c1fcef; 
-    --subject-color-blue: #c1eefc; 
-    --subject-color-red: #fcc1c1; 
-    --subject-color-yellow: #fcf8c1;
+    --subject-color-green: #eefadc; 
+    --subject-color-blue: #e4f9ff; 
+    --subject-color-red: #fff0ee; 
+    --subject-color-yellow: #fffbd1;
+    
+    --subject-color-green-dark: #5d770d; 
+    --subject-color-blue-dark: #0078a1; 
+    --subject-color-red-dark: #ca3214; 
+    --subject-color-yellow-dark: #946800;
 
     --color-info-dark: #4d86c4;
     --color-debug-dark: #4d86c4;
@@ -37,6 +50,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     color: var(--primary-color);
+    background: var(--ligth-gray);
 }
 
 h1 {
@@ -77,7 +91,7 @@ ul {
 
 /* Header */
 .main-header {
-    background: var(--ligth-gray);
+    background: var(--white-color);
     padding: 2rem;
     box-shadow: 0 0 4px 1px;
 }
@@ -346,6 +360,7 @@ ul {
 .weekday {
     border: var(--border) solid var(--primary-color);
     min-height: 30rem;
+    background: var(--white-color);
 }
 
 .weekday-title {
@@ -430,18 +445,22 @@ ul {
 
 .vermelho {
     background: var(--subject-color-red);
+    color: var(--subject-color-red-dark);
 }
 
 .azul {
     background: var(--subject-color-blue);
+    color: var(--subject-color-blue-dark);
 }
 
 .verde {
     background: var(--subject-color-green);
+    color: var(--subject-color-green-dark);
 }
 
 .amarelo {
     background: var(--subject-color-yellow);
+    color: var(--subject-color-yellow-dark);
 }
 
 .subject-color option[value="azul"] {
@@ -503,5 +522,9 @@ ul {
 
     .modal .content-modal {
         width: 80%;
+    }
+
+    .main-subjects-list {
+        width: 100%;
     }
 }
