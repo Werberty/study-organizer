@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from django import forms
 from django.core.exceptions import ValidationError
 
@@ -5,6 +7,11 @@ from .models import Study, Subject
 
 
 class StudyForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self._my_errors = defaultdict(list)
+
     class Meta:
         model = Study
         fields = (
@@ -41,10 +48,11 @@ class StudyForm(forms.ModelForm):
         end_time = cleaned_data.get('end_time', None)
 
         if end_time is not None and start_time is None:
-            raise ValidationError(
-                'Necessário horário de início e final',
-                code='invalid'
-            )
+            self._my_errors['start_time'].append(
+                'Horário de termino precisa de um início')
+
+        if self._my_errors:
+            raise ValidationError(self._my_errors)
 
         return super().clean()
 
