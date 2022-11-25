@@ -194,16 +194,20 @@ ul {
     z-index: 1;
 }
 
+.content-modal {
+    position: relative;
+}
+
 .new-study .modal .close-modal {
     position: absolute;
-    top: 18%;
-    right: 35%;
+    top: 1rem;
+    right: 0;
 }
 
 .new-subject .modal .close-modal {
     position: absolute;
-    top: 15%;
-    right: 35%;
+    top: 1rem;
+    right: 0;
 }
 
 .modal .close-modal:hover span {
@@ -284,44 +288,40 @@ ul {
     display: flex;
     flex-flow: column wrap;
     gap: var(--gap);
+    align-items: center;
 }
 
 .message {
-  padding: 1rem;
-  border-radius: 4px;
-  text-align: center;
-  background: var(--ligth-gray);
-  color: var(--primary-color);
+    padding: 1rem;
+    border-radius: .4rem;
+    text-align: center;
+    max-width: 30%;
+    background: var(--ligth-gray);
+    color: var(--primary-color);
 }
 
 .message-error {
-    background: var(--color-error-dark);
-    color: var(--primary-color);
+    background: var(--subject-color-red);
 }
 
 .message-success {
     background: var(--subject-color-green);
-    color: var(--primary-color);
 }
 
 .message-warning {
-    background: var(--color-warning-dark);
-    color: var(--white-color);
+    background: var(--subject-color-yellow);
 }
 
 .message-alert {
     background: var(--color-alert-dark);
-    color: var(--white-color);
 }
 
 .message-info {
-    background: var(--color-info-dark);
-    color: var(--white-color);
+    background: var(--subject-color-blue);
 }
 
 .message-debug {
   background: var(--color-debug-dark);
-  color: var(--white-color);
 }
 
 /* Week studies */
@@ -412,8 +412,8 @@ ul {
     color: var(--primary-color);
 
     position: absolute;
-    top: 25%;
-    right: 2px;
+    top: 34%;
+    right: .2rem;
     transition: all 300ms ease-in-out;
 }
 

@@ -14,12 +14,12 @@
                 </label>
                 <input type="checkbox" id="modal-new-study" class="checkbox-modal">
                 <div class="modal">
-                    <label for="modal-new-study" class="close-modal">
-                        <span class="material-symbols-outlined cancel">
-                            close
-                        </span>
-                    </label>
                     <div class="content-modal">
+                        <label for="modal-new-study" class="close-modal">
+                            <span class="material-symbols-outlined cancel">
+                                close
+                            </span>
+                        </label>
                         <div class="main-form">
                             <form action="{% url 'studies:create_study' %}" method="POST">
                                 {% csrf_token %}
@@ -51,12 +51,12 @@
                 </label>
                 <input type="checkbox" id="modal-new-subject" class="checkbox-modal">
                 <div class="modal">
-                    <label for="modal-new-subject" class="close-modal">
-                        <span class="material-symbols-outlined cancel">
-                            close
-                        </span>
-                    </label>
                     <div class="content-modal">
+                        <label for="modal-new-subject" class="close-modal">
+                            <span class="material-symbols-outlined cancel">
+                                close
+                            </span>
+                        </label>
                         <div class="main-form">
                             <form action="{% url 'studies:create_subject' %}" method="POST">
                                 {% csrf_token %}

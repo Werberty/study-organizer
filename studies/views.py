@@ -37,6 +37,8 @@ def create_study(request):
         form.save()
         del (request.session['studies_form_data'])
         messages.success(request, 'Sucesso!')
+    else:
+        messages.error(request, 'Erro no formulário!')
 
     return redirect(reverse('studies:home'))
 
@@ -53,6 +55,8 @@ def create_subject(request):
         form.save()
         del (request.session['subject_form_data'])
         messages.success(request, 'Sucesso!')
+    else:
+        messages.error(request, 'Erro no formulário!')
 
     return redirect(reverse('studies:home'))
 
@@ -70,12 +74,13 @@ def delete_subject(request, id):
     subject = Subject.objects.get(id=id)
 
     subject.delete()
+    messages.success(request, 'Deletado com sucesso!')
 
     return redirect(reverse('studies:home'))
 
 
 def subject(request, id):
     subject = Subject.objects.get(id=id)
-    return render(request, 'studies/subject.html', context={
+    return render(request, 'studies/pages/subject.html', context={
         'subject': subject,
     })
