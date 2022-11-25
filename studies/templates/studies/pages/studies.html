@@ -204,19 +204,21 @@
             <div class="subjects-grid">
                 <ul>
                     {% for subject in subjects %}
-                    <div class="subject-content {{ subject.color }}">
-                            <li>
-                                {{ subject.name }}
-                                <form class="form-delete inline" action="{% url 'studies:delete_subject' subject.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="id" value="id-subject">
-                                    
-                                    <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
-                                        close
-                                        </span></button>
-                                </form>
-                            </li>
-                    </div>
+                    <a class="subject-link" href="{% url 'studies:subject' subject.id %}">
+                        <div class="subject-content {{ subject.color }}">
+                                <li>
+                                    {{ subject.name }}
+                                    <form class="form-delete inline" action="{% url 'studies:delete_subject' subject.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="id-subject">
+                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
+                        </div>
+                    </a>
                     {% empty %}
                         <p class="center">Nenhum assunto encontrado. Adicione um novo assunto para começar a organizar seus estudos.</p>
                     {% endfor %}

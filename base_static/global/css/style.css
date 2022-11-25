@@ -488,6 +488,12 @@ ul {
     font-size: 1.6rem;
     text-align: center;
     padding: .8rem;
+    box-sizing: border-box;
+}
+
+.subject-content li:hover {
+    transition: border 100ms ease-in-out;
+    border: var(--border) solid var(--primary-color);
 }
 
 @media (max-width: 800px) {
