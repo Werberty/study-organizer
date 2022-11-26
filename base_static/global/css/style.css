@@ -1,19 +1,11 @@
 @charset "UTF-8";
 
 :root {
-    /* Ligth mode */
     --primary-color: #1B1C2D;
     --secundary-color: #35216E;
     --tertiary-color: #A5E2FF;
     --white-color: #FFFFFF;
     --ligth-gray: #f1f1f1;
-    
-    /* Dark mode */
-    /* --primary-color: #FDFDFE;
-    --secundary-color: #35216E;
-    --tertiary-color: #A5E2FF;
-    --white-color: #1B1C2D;
-    --ligth-gray: #f1f1f1; */
 
     --subject-color-green: #eefadc; 
     --subject-color-blue: #e4f9ff; 
@@ -316,18 +308,26 @@ ul {
     max-width: 30%;
     background: var(--ligth-gray);
     color: var(--primary-color);
+    box-shadow: 0 2px 2px var(--primary-color);
+
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
 }
 
 .message-error {
     background: var(--subject-color-red);
+    color: var(--subject-color-red-dark);
 }
 
 .message-success {
     background: var(--subject-color-green);
+    color: var(--subject-color-green-dark);
 }
 
 .message-warning {
     background: var(--subject-color-yellow);
+    color: var(--subject-color-yellow-dark);
 }
 
 .message-alert {
@@ -336,6 +336,7 @@ ul {
 
 .message-info {
     background: var(--subject-color-blue);
+    color: var(--subject-color-blue-dark);
 }
 
 .message-debug {
@@ -526,5 +527,23 @@ ul {
 
     .main-subjects-list {
         width: 100%;
+    }
+}
+
+@keyframes effect {
+    0% {
+        transform: translateX(100%);
+    }
+
+    40% {
+        transform: translateX(-10%);
+    }
+
+    80% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(10%);
     }
 }
