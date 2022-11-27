@@ -65,7 +65,7 @@ def delete_study(request, id):
     study = Study.objects.get(id=id)
 
     study.delete()
-    messages.warning(request, 'Deletado com sucesso!')
+    messages.info(request, 'Deletado com sucesso!')
 
     return redirect(reverse('studies:home'))
 

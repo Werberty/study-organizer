@@ -316,18 +316,18 @@ ul {
 }
 
 .message-error {
-    background: var(--subject-color-red);
-    color: var(--subject-color-red-dark);
+    background: var(--color-error-dark);
+    color: var(--subject-color-red);
 }
 
 .message-success {
-    background: var(--subject-color-green);
-    color: var(--subject-color-green-dark);
+    background: var(--color-success-dark);
+    color: var(--subject-color-green);
 }
 
 .message-warning {
-    background: var(--subject-color-yellow);
-    color: var(--subject-color-yellow-dark);
+    background: var(--color-warning-dark);
+    color: var(--subject-color-yellow);
 }
 
 .message-alert {
@@ -335,8 +335,8 @@ ul {
 }
 
 .message-info {
-    background: var(--subject-color-blue);
-    color: var(--subject-color-blue-dark);
+    background: var(--color-info-dark);
+    color: var(--subject-color-blue);
 }
 
 .message-debug {
@@ -490,6 +490,7 @@ ul {
 .main-subjects-list h3 {
     margin: 2rem 0 2rem 0;
     text-align: center;
+    font-size: 2rem;
 }
 
 .subjects-grid ul {
