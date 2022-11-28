@@ -33,7 +33,7 @@ Como atualmente alguns amigos estão estudando para concurso, resolvi fazer uma 
 <h2 id="layout">🖼️ Layout</h2>
 
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/study-organizer.png" />
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/study-organizer.gif" />
 </h1>
 
 <h2 id="tecnologias">🛠 Tecnologias</h2>
