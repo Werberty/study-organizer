@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+<section class="main-content">
+        <h1>Cadastrar</h1>
+        <article class="main-login">
+            <div class="main-form">
+                <div class="form-content form-content-grid">
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+
+                            {{ field }}
+
+                            {{ field.errors }}
+                        </div>
+                        {% endfor %}
+                    </form>
+                </div>
+                <button class="button-generic" type="submit">Cadastrar</button>
+            </div>
+        </article>
+    </section>
+{% endblock content %}

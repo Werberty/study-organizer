@@ -517,6 +517,26 @@ ul {
     border: var(--border) solid var(--primary-color);
 }
 
+/* Login */
+
+.main-login {
+    width: 40%;
+    height: auto;
+    padding: 2rem 3rem;
+    margin: auto;
+    background-color: var(--white-color);
+    border: var(--border) solid var(--primary-color);
+    overflow: auto;
+}
+
+.main-login .main-form {
+    padding: 0;
+}
+
+.main-login .colun-2 {
+    order: 2;
+}
+
 @media (max-width: 800px) {
     .main-week-studies {
         grid-template-columns: repeat(3, 1fr);
