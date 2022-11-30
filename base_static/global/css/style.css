@@ -244,12 +244,9 @@ ul {
 }
 
 .form-content-grid {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.form-group{
-    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem 1rem;
 }
 
 .form-group label {
@@ -355,12 +352,11 @@ ul {
 
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: .6rem;
+    gap: 0.6rem;
 }
 
 .weekday {
     border: var(--border) solid var(--primary-color);
-    min-height: 30rem;
     background: var(--white-color);
 }
 
@@ -509,7 +505,6 @@ ul {
     font-size: 1.6rem;
     text-align: center;
     padding: .8rem;
-    box-sizing: border-box;
 }
 
 .subject-content li:hover {
@@ -520,21 +515,12 @@ ul {
 /* Login */
 
 .main-login {
-    width: 40%;
+    width: 62rem;
     height: auto;
-    padding: 2rem 3rem;
     margin: auto;
     background-color: var(--white-color);
     border: var(--border) solid var(--primary-color);
     overflow: auto;
-}
-
-.main-login .main-form {
-    padding: 0;
-}
-
-.main-login .colun-2 {
-    order: 2;
 }
 
 @media (max-width: 800px) {

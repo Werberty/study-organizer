@@ -5,9 +5,9 @@
         <h1>Cadastrar</h1>
         <article class="main-login">
             <div class="main-form">
-                <div class="form-content form-content-grid">
-                    <form action="#" method="POST">
-                        {% csrf_token %}
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <div class="form-content form-content-grid">
                         {% for field in form %}
                         <div class="form-group">
                             {{ field.label_tag }}
@@ -17,9 +17,13 @@
                             {{ field.errors }}
                         </div>
                         {% endfor %}
-                    </form>
-                </div>
-                <button class="button-generic" type="submit">Cadastrar</button>
+                        <div class="form-content form-content-grid">
+                            <div class="form-group">
+                                <button class="button-generic" type="submit">Cadastrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </article>
     </section>
