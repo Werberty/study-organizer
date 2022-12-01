@@ -15,12 +15,14 @@ class RegisterForm(forms.ModelForm):
         widgets = {
             'first_name': forms.TextInput(
                 attrs={
-                    'class': 'colun-2'
-                }
-            ),
-            'last_name': forms.TextInput(
-                attrs={
-                    'class': 'colun-2'
+                    'class': 'span-2'
                 }
             )
         }
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(
+        widget=forms.PasswordInput()
+    )
