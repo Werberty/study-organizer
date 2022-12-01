@@ -44,7 +44,7 @@ class RegisterForm(forms.ModelForm):
         password1 = cleaned_data['password']
         password2 = cleaned_data['password2']
 
-        if password1 == password2:
+        if password1 != password2:
             raise ValidationError('Senhas diferentes!')
 
         return cleaned_data

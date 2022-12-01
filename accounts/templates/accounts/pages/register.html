@@ -2,29 +2,32 @@
 
 {% block content %}
 <section class="main-content">
-        <h1>Cadastrar</h1>
-        <article class="main-register">
-            <div class="main-form">
-                <form action="{% url 'accounts:register' %}" method="POST">
-                    {% csrf_token %}
+    <h1>Cadastrar</h1>
+
+    {% include 'global/partials/messages.html' %}
+
+    <article class="main-register">
+        <div class="main-form">
+            <form action="{% url 'accounts:register_create' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-content form-content-grid">
+                    {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+
+                        {{ field }}
+
+                        {{ field.errors }}
+                    </div>
+                    {% endfor %}
                     <div class="form-content form-content-grid">
-                        {% for field in form %}
                         <div class="form-group">
-                            {{ field.label_tag }}
-
-                            {{ field }}
-
-                            {{ field.errors }}
-                        </div>
-                        {% endfor %}
-                        <div class="form-content form-content-grid">
-                            <div class="form-group">
-                                <button class="button-generic" type="submit">Cadastrar</button>
-                            </div>
+                            <button class="button-generic" type="submit">Cadastrar</button>
                         </div>
                     </div>
-                </form>
-            </div>
-        </article>
-    </section>
+                </div>
+            </form>
+        </div>
+    </article>
+</section>
 {% endblock content %}
