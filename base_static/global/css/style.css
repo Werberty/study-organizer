@@ -254,7 +254,7 @@ ul {
     margin-bottom: .5rem;
 }
 
-.form-group .span-2 {
+.span-2 {
     grid-column: span 2;
 }
 
@@ -526,6 +526,10 @@ ul {
     background-color: var(--white-color);
     border: var(--border) solid var(--primary-color);
     overflow: auto;
+}
+
+.main-login {
+    width: 40rem;
 }
 
 @media (max-width: 800px) {
