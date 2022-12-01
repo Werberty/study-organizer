@@ -5,7 +5,7 @@
         <h1>Cadastrar</h1>
         <article class="main-register">
             <div class="main-form">
-                <form action="#" method="POST">
+                <form action="{% url 'accounts:register' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-content form-content-grid">
                         {% for field in form %}
