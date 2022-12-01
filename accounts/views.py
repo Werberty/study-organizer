@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -69,3 +69,13 @@ def login_create(request):
         messages.error(request, 'Usuário ou senha inválida')
 
     return redirect(reverse('studies:home'))
+
+
+def logout_view(request):
+    # if not request.POST:
+    #     messages.error(request, 'Requisição de logout inválida')
+    #     return redirect(reverse('accounts:login'))
+
+    messages.success(request, 'Logout sucedido')
+    logout(request)
+    return redirect(reverse('accounts:login'))
