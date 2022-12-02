@@ -1,10 +1,20 @@
 <aside class="main-header">
-    <div class="main-logo main-container">
-        <a href="{% url 'studies:home' %}">
+    <div class="main-container">
+        <div class="main-logo">
+            <a href="{% url 'studies:home' %}">
+                <span class="material-symbols-outlined">
+                    library_books
+                </span>
+                <h1>Study Organizer</h1>
+            </a>
+        </div>
+        <nav class="nav-user">
+            <p>
+                Olá {{ request.user.username }}
+            </p>
             <span class="material-symbols-outlined">
-                library_books
+                arrow_drop_down
             </span>
-            <h1>Study Organizer</h1>
-        </a>
+        </nav>
     </div>
 </aside>

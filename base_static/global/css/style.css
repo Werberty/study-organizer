@@ -78,7 +78,6 @@ ul {
 
 .main-content {
     padding: 3rem;
-    /* height: 88vh; */
 }
 
 /* Header */
@@ -88,12 +87,10 @@ ul {
     box-shadow: 0 0 4px 1px;
 }
 
-.main-logo {
+.main-header .main-container {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    padding: 0 3rem;
 }
 
 .main-logo span,
@@ -101,8 +98,20 @@ ul {
     display: inline-block;
 }
 
+.main-logo a {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
 .main-logo span {
     font-size: 3.2rem;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    align-self: center;
 }
 
 /* Button generic */
