@@ -8,13 +8,26 @@
                 <h1>Study Organizer</h1>
             </a>
         </div>
+        {% if user.is_authenticated %}
         <nav class="nav-user">
-            <p>
-                Olá {{ request.user.username }}
-            </p>
-            <span class="material-symbols-outlined">
-                arrow_drop_down
-            </span>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="user-dropdown" href="#" role="button">
+                        <p>
+                            Olá {{ request.user.username }}
+                        </p>
+                        <span class="material-symbols-outlined">
+                            arrow_drop_down
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <a class="logout-link" href="{% url 'accounts:logout' %}">Sair</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
+        {% endif %}
     </div>
 </aside>

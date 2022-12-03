@@ -108,10 +108,37 @@ ul {
     font-size: 3.2rem;
 }
 
+.dropdown-menu {
+    display: none;
+    transition: all 1s;
+}
+
+.nav-item {
+    transition: all 1s;
+}
+
 .nav-user {
     display: flex;
     align-items: center;
     align-self: center;
+}
+
+.user-dropdown {
+    display: flex;
+}
+
+.navbar-nav.active .dropdown-menu{
+    display: block;
+}
+
+.dropdown-menu {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    border: var(--border) solid var(--primary-color);
+    background: var(--ligth-gray);
+    z-index: 2;
 }
 
 /* Button generic */

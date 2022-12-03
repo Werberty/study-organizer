@@ -14,6 +14,15 @@
     }
 })();
 
+(() => {
+    let userDropdown = document.querySelector('.user-dropdown');
+    let navbarNav = document.querySelector('.navbar-nav');
+
+    userDropdown.onclick = function(){
+        navbarNav.classList.toggle('active')
+    }
+})();
+
 $(document).ready(function() {
     // Abrir a modal e fechar
     loading();
@@ -24,3 +33,4 @@ $(document).ready(function() {
         }, 3000);
     };
 })
+
