@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -71,6 +72,7 @@ def login_create(request):
     return redirect(reverse('accounts:login'))
 
 
+@login_required(login_url='accounts:login', redirect_field_name='next')
 def logout_view(request):
     messages.success(request, 'Logout sucedido')
     logout(request)

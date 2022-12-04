@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -7,6 +8,7 @@ from .forms import StudyForm, SubjectForm
 from .models import Study, Subject
 
 
+@login_required(login_url='accounts:login', redirect_field_name='next')
 def home(request):
     studies = Study.objects.all().order_by('start_time')
     subjects = Subject.objects.all()
@@ -25,6 +27,7 @@ def home(request):
     })
 
 
+@login_required(login_url='accounts:login', redirect_field_name='next')
 def create_study(request):
     if not request.POST:
         raise Http404()
@@ -43,6 +46,7 @@ def create_study(request):
     return redirect(reverse('studies:home'))
 
 
+@login_required(login_url='accounts:login', redirect_field_name='next')
 def create_subject(request):
     if not request.POST:
         raise Http404()
@@ -61,6 +65,7 @@ def create_subject(request):
     return redirect(reverse('studies:home'))
 
 
+@login_required(login_url='accounts:login', redirect_field_name='next')
 def delete_study(request, id):
     study = Study.objects.get(id=id)
 
