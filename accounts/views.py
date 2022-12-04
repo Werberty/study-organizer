@@ -30,6 +30,7 @@ def register_create(request):
         user.set_password(user.password)
         user.save()
 
+        messages.success(request, 'Cadastro feito')
         del (request.session['register_form_data'])
         return redirect(reverse('accounts:login'))
 

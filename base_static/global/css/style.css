@@ -114,10 +114,16 @@ ul {
 }
 
 .nav-item {
+    margin-right: 1rem;
     transition: all 1s;
 }
 
-.nav-user {
+.nav-item a:hover {
+    color: var(--secundary-color);
+    transition: color 300ms ease-in-out;
+}
+
+.navbar {
     display: flex;
     align-items: center;
     align-self: center;
@@ -127,7 +133,7 @@ ul {
     display: flex;
 }
 
-.navbar-nav.active .dropdown-menu{
+.navbar.active .dropdown-menu{
     display: block;
 }
 
@@ -324,6 +330,12 @@ ul {
     font-size: 1.5rem;
 }
 
+.form-group .help-text {
+    margin-top: .5rem;
+    color: gray;
+    font-size: 1.6rem;
+}
+
 .errorlist {
     color: var(--color-error-dark);
     font-size: 1.6rem;
@@ -348,8 +360,8 @@ ul {
     box-shadow: 0 2px 2px var(--primary-color);
 
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 9rem;
+    right: 3rem;
 }
 
 .message-error {

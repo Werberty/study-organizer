@@ -16,10 +16,10 @@
 
 (() => {
     let userDropdown = document.querySelector('.user-dropdown');
-    let navbarNav = document.querySelector('.navbar-nav');
+    let navbar = document.querySelector('.navbar');
 
     userDropdown.onclick = function(){
-        navbarNav.classList.toggle('active')
+        navbar.classList.toggle('active')
     }
 })();
 

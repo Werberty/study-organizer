@@ -52,7 +52,16 @@ class RegisterForm(forms.ModelForm):
                 attrs={
                     'placeholder': 'exemplo@email.com'
                 }
+            ),
+            'password': forms.PasswordInput(
+                attrs={
+                    'autocomplete': 'off'
+                }
             )
+        }
+        help_text = {
+            'username': 'Seu usuário',
+            'email': 'Um e-mail válido'
         }
 
     def clean(self):

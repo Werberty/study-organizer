@@ -75,6 +75,7 @@ def delete_study(request, id):
     return redirect(reverse('studies:home'))
 
 
+@login_required(login_url='accounts:login', redirect_field_name='next')
 def delete_subject(request, id):
     subject = Subject.objects.get(id=id)
 
@@ -84,6 +85,7 @@ def delete_subject(request, id):
     return redirect(reverse('studies:home'))
 
 
+@login_required(login_url='accounts:login', redirect_field_name='next')
 def subject(request, id):
     subject = Subject.objects.get(id=id)
     return render(request, 'studies/pages/subject.html', context={
