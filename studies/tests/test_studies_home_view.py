@@ -6,6 +6,11 @@ from .test_studies_base import StudiesBaseTest
 
 
 class StudiesHomeViewsTest(StudiesBaseTest):
+    def setUp(self) -> None:
+        self.make_user()
+        self.login_user()
+        return super().setUp()
+
     def test_studies_home_view_function_is_correct(self):
         view = resolve(reverse('studies:home'))
         self.assertIs(view.func, home)
