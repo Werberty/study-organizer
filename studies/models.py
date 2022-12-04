@@ -1,4 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
+User = get_user_model()
 
 
 class Subject(models.Model):
@@ -9,6 +12,8 @@ class Subject(models.Model):
         ('amarelo', 'amarelo'),
     )
 
+    student = models.ForeignKey(
+        User, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(max_length=255)
     color = models.CharField(max_length=8, choices=CHOICES, default='azul')
     contents = models.TextField(blank=True, null=True)
@@ -29,7 +34,8 @@ class Study(models.Model):
     )
 
     weekday = models.CharField(max_length=9, choices=CHOICES)
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    subject = models.ForeignKey(
+        Subject, on_delete=models.CASCADE, related_name='studies')
     start_time = models.TimeField(blank=True, null=True)
     end_time = models.TimeField(blank=True, null=True)
 

@@ -6,28 +6,34 @@
 
         {% include 'global/partials/messages.html' %}
 
-        <article class="main-login">
-            <div class="main-form">
-                <form action="{% url 'accounts:login_create' %}" method="POST">
-                    {% csrf_token %}
-                    <div class="form-content form-content-grid">
-                        {% for field in form %}
-                        <div class="form-group {{ field.field.widget.attrs.class }}">
-                            {{ field.label_tag }}
-
-                            {{ field }}
-
-                            {{ field.errors }}
-                        </div>
-                        {% endfor %}
+        {% if not user.is_authenticated %}
+            <article class="main-login">
+                <div class="main-form">
+                    <form action="{% url 'accounts:login_create' %}" method="POST">
+                        {% csrf_token %}
                         <div class="form-content form-content-grid">
-                            <div class="form-group">
-                                <button class="button-generic" type="submit">Entrar</button>
+                            {% for field in form %}
+                            <div class="form-group {{ field.field.widget.attrs.class }}">
+                                {{ field.label_tag }}
+
+                                {{ field }}
+
+                                {{ field.errors }}
+                            </div>
+                            {% endfor %}
+                            <div class="form-content form-content-grid">
+                                <div class="form-group">
+                                    <button class="button-generic" type="submit">Entrar</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
+            </article>
+        {% else %}
+            <div class="login-message">
+                <p>O usuário {{ user.username }} já está logado! <a href="{% url 'studies:home' %}">Clique aqui</a> para voltar para home.</p>
             </div>
-        </article>
+        {% endif %}
     </section>
 {% endblock content %}

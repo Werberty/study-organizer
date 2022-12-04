@@ -342,6 +342,14 @@ ul {
     margin-top: .5rem;
 }
 
+.login-message {
+    text-align: center;
+}
+
+.login-message a {
+    text-decoration: underline;
+}
+
 /* Messages Alerts */
 .messages-container {
     display: flex;
