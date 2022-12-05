@@ -17,9 +17,11 @@
 (() => {
     let userDropdown = document.querySelector('.user-dropdown');
     let navbar = document.querySelector('.navbar');
+    let arrowDropDown = document.querySelector('.arrow_drop_down'); 
 
     userDropdown.onclick = function(){
         navbar.classList.toggle('active')
+        arrowDropDown.classList.toggle('active')
     }
 })();
 

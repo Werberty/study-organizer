@@ -12,10 +12,13 @@
         <ul class="navbar">
             <li class="nav-item">
                 <a class="user-dropdown" href="#" role="button">
-                    <p>
-                        Olá {{ request.user.username }}
-                    </p>
                     <span class="material-symbols-outlined">
+                        account_circle
+                    </span>
+                    <p>
+                        {{ request.user.username }}
+                    </p>
+                    <span class="material-symbols-outlined arrow_drop_down">
                         arrow_drop_down
                     </span>
                 </a>
@@ -29,13 +32,19 @@
         {% else %}
         <ul class="navbar">
             <li class="nav-item">
-                <a href="{% url 'accounts:login' %}" role="button">
-                    <p>Entrar</p>
+                <a href="{% url 'accounts:register' %}" role="button">
+                    <span class="material-symbols-outlined">
+                        how_to_reg
+                    </span>
+                    <p>Registrar-se</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{% url 'accounts:register' %}" role="button">
-                    <p>Registrar-se</p>
+                <a href="{% url 'accounts:login' %}" role="button">
+                    <span class="material-symbols-outlined">
+                        login
+                    </span>
+                    <p>Entrar</p>
                 </a>
             </li>
         </ul>
