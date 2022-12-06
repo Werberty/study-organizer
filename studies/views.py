@@ -17,7 +17,7 @@ def home(request):
     studies_form_data = request.session.get('studies_form_data') or None
     subject_form_data = request.session.get('subject_form_data') or None
 
-    form_study = StudyForm(studies_form_data)
+    form_study = StudyForm(request.user, studies_form_data)
     form_subject = SubjectForm(subject_form_data)
 
     return render(request, 'studies/pages/studies.html', context={
@@ -35,7 +35,7 @@ def create_study(request):
 
     POST = request.POST
     request.session['studies_form_data'] = POST
-    form = StudyForm(POST)
+    form = StudyForm(request.user, POST)
 
     if form.is_valid():
         form.save()

@@ -7,10 +7,10 @@ from .models import Study, Subject
 
 
 class StudyForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
 
-        self._my_errors = defaultdict(list)
+    subject = forms.ModelChoiceField(
+        queryset=None
+    )
 
     class Meta:
         model = Study
@@ -40,6 +40,13 @@ class StudyForm(forms.ModelForm):
                 }
             )
         }
+
+    def __init__(self, user, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        subjects = Subject.objects.filter(student=user)
+        self.fields['subject'].queryset = subjects
+
+        self._my_errors = defaultdict(list)
 
     def clean(self):
         cleaned_data = super().clean()
