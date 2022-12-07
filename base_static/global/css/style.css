@@ -17,12 +17,12 @@
     --subject-color-red-dark: #ca3214; 
     --subject-color-yellow-dark: #946800;
 
-    --color-info-dark: #4d86c4;
-    --color-debug-dark: #4d86c4;
-    --color-success-dark: #4a9c5d;
-    --color-alert-dark: #927f40;
-    --color-warning-dark: #927f40;
-    --color-error-dark: #da525d;
+    --color-info-dark: #0091ff;
+    --color-debug-dark: #68ddfd;
+    --color-success-dark: #46a758;
+    --color-alert-dark: #f5d90a;
+    --color-warning-dark: #ffb224;
+    --color-error-dark: #e5484d;
 
     --border: .2rem;
     --gap: 3rem;
@@ -165,6 +165,11 @@ ul {
     border: var(--border) solid gray;
     background: var(--white-color);
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+
+.logout-link span {
+    font-size: 1.9rem;
+    color: var(--color-error-dark);
 }
 
 /* Button generic */
@@ -383,9 +388,9 @@ ul {
     border-radius: .4rem;
     text-align: center;
     max-width: 30%;
-    background: var(--ligth-gray);
-    color: var(--primary-color);
-    box-shadow: 0 2px 2px var(--primary-color);
+    background: var(--primary-color);
+    color: var(--white-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.20);
 
     position: absolute;
     top: 9rem;
@@ -394,17 +399,14 @@ ul {
 
 .message-error {
     background: var(--color-error-dark);
-    color: var(--subject-color-red);
 }
 
 .message-success {
     background: var(--color-success-dark);
-    color: var(--subject-color-green);
 }
 
 .message-warning {
     background: var(--color-warning-dark);
-    color: var(--subject-color-yellow);
 }
 
 .message-alert {
@@ -413,7 +415,6 @@ ul {
 
 .message-info {
     background: var(--color-info-dark);
-    color: var(--subject-color-blue);
 }
 
 .message-debug {

@@ -32,7 +32,7 @@ class StudyForm(forms.ModelForm):
             'end_time': 'Hora de término',
         }
         widgets = {
-            'weekday': forms.TextInput(
+            'weekday': forms.Select(
                 attrs={
                     'class': 'span-2'
                 }

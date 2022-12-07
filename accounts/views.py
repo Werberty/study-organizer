@@ -30,7 +30,7 @@ def register_create(request):
         user.set_password(user.password)
         user.save()
 
-        messages.success(request, 'Cadastro feito')
+        messages.success(request, 'Cadastro sucedido')
         del (request.session['register_form_data'])
         return redirect(reverse('accounts:login'))
 
@@ -65,7 +65,7 @@ def login_create(request):
             login(request, authenticated_user)
             return redirect(reverse('studies:home'))
         else:
-            messages.error(request, 'Usuário ou senha inválida')
+            messages.error(request, 'Usuário ou senha inválido')
 
     else:
         messages.error(request, 'Credenciais inválidas')

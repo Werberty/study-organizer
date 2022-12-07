@@ -42,7 +42,7 @@ def create_study(request):
         del (request.session['studies_form_data'])
         messages.success(request, 'Estudo programado')
     else:
-        messages.error(request, 'Erro no formulário!')
+        messages.error(request, 'Erro no formulário')
 
     return redirect(reverse('studies:home'))
 
@@ -64,7 +64,7 @@ def create_subject(request):
         del (request.session['subject_form_data'])
         messages.success(request, 'Assunto adicionado')
     else:
-        messages.error(request, 'Erro no formulário!')
+        messages.error(request, 'Erro no formulário')
 
     return redirect(reverse('studies:home'))
 
@@ -73,11 +73,8 @@ def create_subject(request):
 def delete_study(request, id):
     study = get_object_or_404(Study, subject__student=request.user, pk=id)
 
-    if not study:
-        raise Http404()
-
     study.delete()
-    messages.info(request, 'Deletado com sucesso!')
+    messages.warning(request, 'Estudo deletado')
 
     return redirect(reverse('studies:home'))
 
@@ -87,7 +84,7 @@ def delete_subject(request, id):
     subject = get_object_or_404(Subject, student=request.user, pk=id)
 
     subject.delete()
-    messages.info(request, 'Deletado com sucesso!')
+    messages.info(request, 'Assunto deletado')
 
     return redirect(reverse('studies:home'))
 
