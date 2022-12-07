@@ -623,7 +623,13 @@ ul {
     width: 40rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
+    .modal .content-modal {
+        width: 40%;
+    }
+}
+
+@media (max-width: 830px) {
     .weekday {
         width: 18rem;
     }
@@ -633,7 +639,7 @@ ul {
     }
 
     .modal .content-modal {
-        width: 80%;
+        width: 60%;
     }
 
     .main-subjects-list {
@@ -645,9 +651,9 @@ ul {
     }
 }
 
-@media (max-width: 520px) {
-    .main-week-studies {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 550px) {
+    .modal .content-modal {
+        width: 80%;
     }
 }
 

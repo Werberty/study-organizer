@@ -10,6 +10,11 @@ class StudyForm(forms.ModelForm):
 
     subject = forms.ModelChoiceField(
         label='Assunto',
+        widget=forms.Select(
+            attrs={
+                'class': 'span-2'
+            }
+        ),
         queryset=None
     )
 
@@ -27,16 +32,23 @@ class StudyForm(forms.ModelForm):
             'end_time': 'Hora de término',
         }
         widgets = {
+            'weekday': forms.TextInput(
+                attrs={
+                    'class': 'span-2'
+                }
+            ),
             'start_time': forms.TimeInput(
                 format='%H:%M',
                 attrs={
                     'type': 'time',
+                    'class': 'span-2'
                 }
             ),
             'end_time': forms.TimeInput(
                 format='%H:%M',
                 attrs={
                     'type': 'time',
+                    'class': 'span-2'
                 }
             )
         }
