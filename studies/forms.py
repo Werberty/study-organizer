@@ -9,6 +9,7 @@ from .models import Study, Subject
 class StudyForm(forms.ModelForm):
 
     subject = forms.ModelChoiceField(
+        label='Assunto',
         queryset=None
     )
 
@@ -22,7 +23,6 @@ class StudyForm(forms.ModelForm):
         )
         labels = {
             'weekday': 'Dia da semana',
-            'subject': 'Assunto',
             'start_time': 'Hora de início',
             'end_time': 'Hora de término',
         }
@@ -75,19 +75,26 @@ class SubjectForm(forms.ModelForm):
         )
         labels = {
             'name': 'Nome',
-            'contents': 'Conteudos',
+            'contents': 'Conteúdos',
             'color': 'Cor da tag'
         }
         widgets = {
+            'name': forms.TextInput(
+                attrs={
+                    'class': 'span-2',
+                    'placeholder': 'Nome da matéria',
+                }
+            ),
+            'contents': forms.Textarea(
+                attrs={
+                    'class': 'span-2',
+                    'placeholder': 'Conteúdos da máteria a ser estudada...'
+                }
+            ),
             'color': forms.Select(
                 attrs={
-                    'class': 'subject-color',
+                    'class': 'subject-color span-2',
                     'type': 'color'
                 }
             ),
-            'name': forms.TextInput(
-                attrs={
-                    'placeholder': 'Nome da matéria'
-                }
-            )
         }

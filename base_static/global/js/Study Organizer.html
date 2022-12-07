@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://127.0.0.1:8000/# -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Organizer</title>
+<link rel="stylesheet" href="./Study Organizer_files/style.css">
+
+<!-- Google icons -->
+<link href="./Study Organizer_files/css2" rel="stylesheet">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Study Organizer_files/css2(1)" rel="stylesheet">
+<style>undefined</style><link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="true"><link rel="preconnect" href="https://fonts.gstatic.com/"><link rel="stylesheet" href="./Study Organizer_files/css2(2)"></head>
+
+<body cz-shortcut-listen="true">
+    <aside class="main-header">
+    <div class="main-container">
+        <div class="main-logo">
+            <a href="http://127.0.0.1:8000/">
+                <span class="material-symbols-outlined">
+                    library_books
+                </span>
+                <h1>Study Organizer</h1>
+            </a>
+        </div>
+        
+        <ul class="navbar">
+            <li class="nav-item">
+                <a class="user-dropdown" href="http://127.0.0.1:8000/#" role="button">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>
+                    <p>
+                        Werberty
+                    </p>
+                    <span class="material-symbols-outlined arrow_drop_down">
+                        arrow_drop_down
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <a class="logout-link" href="http://127.0.0.1:8000/accounts/logout/">Sair</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+</aside>
+
+    <div class="main-container">
+    <section class="main-content">
+        <h1>Estudos</h1>
+
+        
+
+        <article class="main-buttons">
+            <div class="new-study">
+                <label class="button open-modal" for="modal-new-study">
+                    <span class="material-symbols-outlined add">add</span>
+                    <p>Novo estudo</p>
+                </label>
+                <input type="checkbox" id="modal-new-study" class="checkbox-modal">
+                <div class="modal">
+                    <div class="content-modal">
+                        <label for="modal-new-study" class="close-modal">
+                            <span class="material-symbols-outlined cancel">
+                                close
+                            </span>
+                        </label>
+                        <div class="main-form">
+                            <form action="http://127.0.0.1:8000/study/new/" method="POST">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+                                <div class="form-content form-content-grid">
+                                    
+                                    <div class="form-group ">
+                                        <label for="id_weekday">Dia da semana:</label>
+
+                                        <select name="weekday" required="" id="id_weekday">
+  <option value="" selected="">---------</option>
+
+  <option value="Sunday">Domingo</option>
+
+  <option value="Monday">Segunda-feira</option>
+
+  <option value="Tuesday">Terça-feira</option>
+
+  <option value="Wednesday">Quarta-feira</option>
+
+  <option value="Thursday">Quinta-feira</option>
+
+  <option value="Friday">Sexta-feira</option>
+
+  <option value="Saturday">Sábado</option>
+
+</select>
+            
+                                        
+                                    </div>
+                                    
+                                    <div class="form-group ">
+                                        <label for="id_subject">Assunto:</label>
+
+                                        <select name="subject" required="" id="id_subject">
+  <option value="" selected="">---------</option>
+
+  <option value="19">Matemática</option>
+
+  <option value="21">Informática</option>
+
+  <option value="22">Ética no serviço público</option>
+
+  <option value="28">Programação</option>
+
+  <option value="30">Português</option>
+
+</select>
+            
+                                        
+                                    </div>
+                                    
+                                    <div class="form-group ">
+                                        <label for="id_start_time">Hora de início:</label>
+
+                                        <input type="time" name="start_time" id="id_start_time">
+            
+                                        
+                                    </div>
+                                    
+                                    <div class="form-group ">
+                                        <label for="id_end_time">Hora de término:</label>
+
+                                        <input type="time" name="end_time" id="id_end_time">
+            
+                                        
+                                    </div>
+                                    
+                                    <div class="form-content form-content-grid">
+                                        <div class="form-group">
+                                            <button class="button-generic" type="submit">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="new-subject">
+                <label class="button open-modal" for="modal-new-subject">
+                    <span class="material-symbols-outlined add">add</span>
+                    <p>Novo assunto</p>
+                </label>
+                <input type="checkbox" id="modal-new-subject" class="checkbox-modal">
+                <div class="modal">
+                    <div class="content-modal">
+                        <label for="modal-new-subject" class="close-modal">
+                            <span class="material-symbols-outlined cancel">
+                                close
+                            </span>
+                        </label>
+                        <div class="main-form">
+                            <form action="http://127.0.0.1:8000/subject/new/" method="POST">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+                                <div class="form-content form-content-grid">
+                                    
+                                    <div class="form-group span-2">
+                                        <label for="id_name">Nome:</label>
+
+                                        <input type="text" name="name" class="span-2" placeholder="Nome da matéria" maxlength="255" required="" id="id_name">
+            
+                                        
+                                    </div>
+                                    
+                                    <div class="form-group span-2">
+                                        <label for="id_contents">Conteudos:</label>
+
+                                        <textarea name="contents" cols="40" rows="10" class="span-2" id="id_contents" max_length="300"></textarea>
+            
+                                        
+                                    </div>
+                                    
+                                    <div class="form-group subject-color span-2">
+                                        <label for="id_color">Cor da tag:</label>
+
+                                        <select name="color" class="subject-color span-2" type="color" id="id_color">
+  <option value="azul" selected="">azul</option>
+
+  <option value="vermelho">vermelho</option>
+
+  <option value="verde">verde</option>
+
+  <option value="amarelo">amarelo</option>
+
+</select>
+            
+                                        
+                                    </div>
+                                    
+                                    <div class="form-content form-content-grid">
+                                        <div class="form-group">
+                                            <button class="button-generic" type="submit">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="main-week-studies">
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Domingo</h2>
+                </div>
+                <div class="weekday-content">
+                    <ul>
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Segunda</h2>
+                </div>
+                <div class="weekday-content">
+                    <ul>
+                    
+                        
+                    
+                        
+
+                            <li class="weekday-subject azul">
+    <div class="subject-title">
+        Matemática
+        
+        <form class="form-delete inline" action="http://127.0.0.1:8000/study/delete/48/" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+            <input type="hidden" name="id" value="id-subject">
+            
+            <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                close
+                </span></button>
+        </form>
+    </div>
+    
+    
+        <div class="subject-time">
+            07:00 - 08:20
+        </div>
+    
+
+</li>
+
+                        
+                    
+                        
+                    
+                        
+
+                            <li class="weekday-subject amarelo">
+    <div class="subject-title">
+        Ética no serviço público
+        
+        <form class="form-delete inline" action="http://127.0.0.1:8000/study/delete/89/" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+            <input type="hidden" name="id" value="id-subject">
+            
+            <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                close
+                </span></button>
+        </form>
+    </div>
+    
+    
+        <div class="subject-time">
+            09:00
+        </div>
+    
+
+</li>
+
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    </ul>
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Terça</h2>
+                </div>
+                <div class="weekday-content">
+                    <ul>
+                    
+                        
+                        
+                        
+                        
+                        
+                            
+                            <li class="weekday-subject vermelho">
+    <div class="subject-title">
+        Programação
+        
+        <form class="form-delete inline" action="http://127.0.0.1:8000/study/delete/88/" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+            <input type="hidden" name="id" value="id-subject">
+            
+            <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                close
+                </span></button>
+        </form>
+    </div>
+    
+    
+        <div class="subject-time">
+            08:20 - 10:00
+        </div>
+    
+
+</li>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Quarta</h2>
+                </div>
+                <div class="weekday-content">
+                    <ul>
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                            <li class="weekday-subject verde">
+    <div class="subject-title">
+        Informática
+        
+        <form class="form-delete inline" action="http://127.0.0.1:8000/study/delete/70/" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+            <input type="hidden" name="id" value="id-subject">
+            
+            <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                close
+                </span></button>
+        </form>
+    </div>
+    
+    
+        <div class="subject-time">
+            11:10 - 12:00
+        </div>
+    
+
+</li>
+
+                        
+                        
+                        
+
+                            <li class="weekday-subject azul">
+    <div class="subject-title">
+        Matemática
+        
+        <form class="form-delete inline" action="http://127.0.0.1:8000/study/delete/56/" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+            <input type="hidden" name="id" value="id-subject">
+            
+            <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                close
+                </span></button>
+        </form>
+    </div>
+    
+    
+        <div class="subject-time">
+            12:15 - 13:40
+        </div>
+    
+
+</li>
+
+                        
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Quinta</h2>
+                </div>
+                <div class="weekday-content">
+                    <ul>
+                    
+                        
+
+                            <li class="weekday-subject amarelo">
+    <div class="subject-title">
+        Ética no serviço público
+        
+        <form class="form-delete inline" action="http://127.0.0.1:8000/study/delete/76/" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+            <input type="hidden" name="id" value="id-subject">
+            
+            <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                close
+                </span></button>
+        </form>
+    </div>
+    
+    
+
+</li>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Sexta</h2>
+                </div>
+                <div class="weekday-content">
+                    <ul>
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                            <li class="weekday-subject vermelho">
+    <div class="subject-title">
+        Programação
+        
+        <form class="form-delete inline" action="http://127.0.0.1:8000/study/delete/79/" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+            <input type="hidden" name="id" value="id-subject">
+            
+            <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                close
+                </span></button>
+        </form>
+    </div>
+    
+    
+        <div class="subject-time">
+            20:00 - 22:00
+        </div>
+    
+
+</li>
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="weekday">
+                <div class="weekday-title">
+                    <h2>Sábado</h2>
+                </div>
+                <div class="weekday-content">
+                    <ul>
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="main-subjects-list">
+            <h3>Lista de assuntos</h3>
+            <div class="subjects-grid">
+                <ul>
+                    
+                    <a class="subject-link" href="http://127.0.0.1:8000/subject/19/">
+                        <div class="subject-content azul">
+                                <li>
+                                    Matemática
+                                    <form class="form-delete inline" action="http://127.0.0.1:8000/subject/delete/19/" method="POST">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+                                        <input type="hidden" name="id" value="id-subject">
+                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
+                        </div>
+                    </a>
+                    
+                    <a class="subject-link" href="http://127.0.0.1:8000/subject/21/">
+                        <div class="subject-content verde">
+                                <li>
+                                    Informática
+                                    <form class="form-delete inline" action="http://127.0.0.1:8000/subject/delete/21/" method="POST">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+                                        <input type="hidden" name="id" value="id-subject">
+                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
+                        </div>
+                    </a>
+                    
+                    <a class="subject-link" href="http://127.0.0.1:8000/subject/22/">
+                        <div class="subject-content amarelo">
+                                <li>
+                                    Ética no serviço público
+                                    <form class="form-delete inline" action="http://127.0.0.1:8000/subject/delete/22/" method="POST">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+                                        <input type="hidden" name="id" value="id-subject">
+                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
+                        </div>
+                    </a>
+                    
+                    <a class="subject-link" href="http://127.0.0.1:8000/subject/28/">
+                        <div class="subject-content vermelho">
+                                <li>
+                                    Programação
+                                    <form class="form-delete inline" action="http://127.0.0.1:8000/subject/delete/28/" method="POST">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+                                        <input type="hidden" name="id" value="id-subject">
+                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
+                        </div>
+                    </a>
+                    
+                    <a class="subject-link" href="http://127.0.0.1:8000/subject/30/">
+                        <div class="subject-content amarelo">
+                                <li>
+                                    Português
+                                    <form class="form-delete inline" action="http://127.0.0.1:8000/subject/delete/30/" method="POST">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="V9k6M5uItJtNUpwUSXLP2fJw3Cogin9jG59SOLvZfEQOFCSeBqEkbUWsLmePmZVM">
+                                        <input type="hidden" name="id" value="id-subject">
+                        
+                                        <button type="submit" class="link-danger plaintext-button"><span class="material-symbols-outlined">
+                                            close
+                                            </span></button>
+                                    </form>
+                                </li>
+                        </div>
+                    </a>
+                    
+                </ul>
+            </div>
+        </article>
+
+    </section>
+
+</div>
+
+    <script src="./Study Organizer_files/jquery.js"></script>
+    <script src="./Study Organizer_files/scripts.js"></script>
+
+
+</body></html>

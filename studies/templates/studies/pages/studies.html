@@ -25,7 +25,7 @@
                                 {% csrf_token %}
                                 <div class="form-content form-content-grid">
                                     {% for field in form_study %}
-                                    <div class="form-group">
+                                    <div class="form-group {{ field.field.widget.attrs.class }}">
                                         {{ field.label_tag }}
 
                                         {{ field }}
@@ -62,7 +62,7 @@
                                 {% csrf_token %}
                                 <div class="form-content form-content-grid">
                                     {% for field in form_subject %}
-                                    <div class="form-group">
+                                    <div class="form-group {{ field.field.widget.attrs.class }}">
                                         {{ field.label_tag }}
 
                                         {{ field }}

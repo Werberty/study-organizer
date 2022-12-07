@@ -11,9 +11,9 @@ def strong_password(password):
 
     if not regex.match(password):
         raise ValidationError((
-            'Password must have at least one uppercase letter, '
-            'one lowercase letter and one number. the length should be '
-            'at least 8 characters'
+            'No mínimo 8 caracteres, '
+            'possuir pelo menos uma letra minuscula, '
+            'uma letra maiúscula e um número'
         ),
             code='invalid'
         )
@@ -25,10 +25,65 @@ class RegisterForm(forms.ModelForm):
 
         self._my_errors = defaultdict(list)
 
-    password2 = forms.CharField(
+    username = forms.CharField(
+        label='Usuário',
+        error_messages={
+            'required': 'Nome de usuário é obrigatório',
+            'min_length': 'Use no mínimo 4 caracteres',
+            'max_length': 'Use máximo 150 caracteres'
+        },
+        help_text=(
+            'Obrigatório. Entre 4 e 150 caracteres. '
+            'Letras, números e @/./+/-/_ apenas.'
+        ),
+        min_length=4, max_length=150
+    )
+
+    email = forms.CharField(
+        label='E-mail',
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': 'exemplo@email.com'
+            }
+        ),
+        required=False
+    )
+
+    first_name = forms.CharField(
+        label='Nome',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Ex: José'
+            }
+        ),
+        required=False
+    )
+
+    last_name = forms.CharField(
+        label='Sobrenome',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Ex: Beto'
+            }
+        ),
+        required=False
+    )
+
+    password = forms.CharField(
+        label='Senha',
         widget=forms.PasswordInput(),
-        label='Confirme a senha',
+        error_messages={
+            'required': 'Senha não pode ser vazia'
+        },
         validators=[strong_password]
+    )
+
+    password2 = forms.CharField(
+        label='Confirme a senha',
+        widget=forms.PasswordInput(),
+        error_messages={
+            'required': 'Repita sua senha'
+        }
     )
 
     class Meta:
@@ -40,44 +95,6 @@ class RegisterForm(forms.ModelForm):
             'last_name',
             'password',
         ]
-        labels = {
-            'username': 'Usuário',
-            'email': 'E-mail',
-            'first_name': 'Nome',
-            'last_name': 'Sobrenome',
-            'password': 'Senha',
-        }
-        widgets = {
-            'username': forms.TextInput(
-                attrs={
-                    'placeholder': 'Bento123'
-                }
-            ),
-            'first_name': forms.TextInput(
-                attrs={
-                    'placeholder': 'Ex: José'
-                }
-            ),
-            'last_name': forms.TextInput(
-                attrs={
-                    'placeholder': 'Ex: Bento'
-                }
-            ),
-            'email': forms.EmailInput(
-                attrs={
-                    'placeholder': 'exemplo@email.com'
-                }
-            ),
-            'password': forms.PasswordInput(
-                attrs={
-                    'autocomplete': 'off'
-                }
-            )
-        }
-        help_text = {
-            'username': 'Seu usuário',
-            'email': 'Um e-mail válido'
-        }
 
     def clean(self):
         cleaned_data = super().clean()
