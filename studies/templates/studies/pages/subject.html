@@ -4,5 +4,12 @@
     <section class="main-content">
         <h1>{{ subject.name }}</h1>
         <p>{{ subject.contents }}</p>
+        <br>
+        {% for content in content_list %}
+            <div>
+                <input type="checkbox" name="{{ content }}" id="{{ content }}">
+                <label for="{{ content }}">{{ content }}</label>
+            </div>
+        {% endfor %}
     </section>
 {% endblock content %}

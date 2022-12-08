@@ -44,3 +44,14 @@ class Study(models.Model):
 
     def __str__(self):
         return f'{self.weekday} {self.subject}'
+
+
+class Content(models.Model):
+    name = models.CharField(max_length=255)
+    subject = models.ForeignKey(
+        Subject, on_delete=models.CASCADE,
+        related_name='content_list'
+    )
+
+    def __str__(self) -> str:
+        return self.name
