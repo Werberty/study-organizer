@@ -1,0 +1,17 @@
+.center {
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+
+/* Class containers */
+.main-container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.main-content {
+    padding: 3rem;
+}
