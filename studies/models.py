@@ -6,10 +6,13 @@ User = get_user_model()
 
 class Subject(models.Model):
     CHOICES = (
-        ('azul', 'azul'),
-        ('vermelho', 'vermelho'),
-        ('verde', 'verde'),
-        ('amarelo', 'amarelo'),
+        ('blue', 'Azul'),
+        ('orange', 'Laranja'),
+        ('yellow', 'Amarelo'),
+        ('red', 'Vermelho'),
+        ('green', 'Verde'),
+        ('pink', 'Rosa'),
+        ('purple', 'Roxo'),
     )
 
     student = models.ForeignKey(

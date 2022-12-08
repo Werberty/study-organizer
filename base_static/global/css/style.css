@@ -2,20 +2,26 @@
 
 :root {
     --primary-color: #1B1C2D;
-    --secundary-color: #35216E;
+    --secundary-color: #404147;
     --tertiary-color: #A5E2FF;
     --white-color: #FFFFFF;
     --ligth-gray: #f1f1f1;
 
-    --subject-color-green: #eefadc; 
-    --subject-color-blue: #e4f9ff; 
-    --subject-color-red: #fff0ee; 
-    --subject-color-yellow: #fffbd1;
+    --subject-color-green: #ddf3e4; 
+    --subject-color-blue: #e1f0ff; 
+    --subject-color-red: #ffe5e5; 
+    --subject-color-yellow: #fff8bb;
+    --subject-color-orange: #ffe8d7;
+    --subject-color-pink: #fce5f3;
+    --subject-color-purple: #f3e7fc;
     
-    --subject-color-green-dark: #5d770d; 
-    --subject-color-blue-dark: #0078a1; 
-    --subject-color-red-dark: #ca3214; 
+    --subject-color-green-dark: #18794e; 
+    --subject-color-blue-dark: #006adc; 
+    --subject-color-red-dark: #cd2b31; 
     --subject-color-yellow-dark: #946800;
+    --subject-color-orange-dark: #bd4b00;
+    --subject-color-pink-dark: #cd1d8d;
+    --subject-color-purple-dark: #793aaf;
 
     --color-info-dark: #0091ff;
     --color-debug-dark: #68ddfd;
@@ -431,9 +437,6 @@ ul {
     width: 100%;
     margin: auto;
 
-    /* display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.6rem; */
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -526,40 +529,46 @@ ul {
 
 /* Subjects colors */
 
-.vermelho {
+.red,
+.subject-color option[value="red"] {
     background: var(--subject-color-red);
     color: var(--subject-color-red-dark);
 }
 
-.azul {
+.blue,
+.subject-color option[value="blue"] {
     background: var(--subject-color-blue);
     color: var(--subject-color-blue-dark);
 }
 
-.verde {
+.green,
+.subject-color option[value="green"] {
     background: var(--subject-color-green);
     color: var(--subject-color-green-dark);
 }
 
-.amarelo {
+.yellow,
+.subject-color option[value="yellow"] {
     background: var(--subject-color-yellow);
     color: var(--subject-color-yellow-dark);
 }
 
-.subject-color option[value="azul"] {
-    background-color: var(--subject-color-blue);
+.orange,
+.subject-color option[value="orange"] {
+    background: var(--subject-color-orange);
+    color: var(--subject-color-orange-dark);
 }
 
-.subject-color option[value="verde"] {
-    background-color: var(--subject-color-green);
+.pink,
+.subject-color option[value="pink"] {
+    background: var(--subject-color-pink);
+    color: var(--subject-color-pink-dark);
 }
 
-.subject-color option[value="vermelho"] {
-    background-color: var(--subject-color-red);
-}
-
-.subject-color option[value="amarelo"] {
-    background-color: var(--subject-color-yellow);
+.purple,
+.subject-color option[value="purple"] {
+    background: var(--subject-color-purple);
+    color: var(--subject-color-purple-dark);
 }
 
 /* Subjects list */
@@ -576,9 +585,6 @@ ul {
 }
 
 .subjects-grid ul {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem; */
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
