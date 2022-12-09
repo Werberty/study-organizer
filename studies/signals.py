@@ -5,7 +5,7 @@ from studies.models import Content, Subject
 
 
 def string_to_list(content_list):
-    content_list = content_list.split('-')
+    content_list = content_list.split(' - ')
     list_content = []
     for content in content_list:
         list_content.append(content.strip())

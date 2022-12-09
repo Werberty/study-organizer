@@ -5,7 +5,11 @@
     <h1>{{ weekday }}</h1>
     <ul>
         {% for study in studies %}
-            {% include 'studies/partials/subjects.html' %}
+            <div class="weekday-content">
+                <ul>
+                    {% include 'studies/partials/subjects.html' %}
+                </ul>
+            </div>
             {% for content in study.subject.content_list.all %}
                 <div>
                     <input type="checkbox" name="{{ content }}" id="{{ content }}">
