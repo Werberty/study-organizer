@@ -369,6 +369,10 @@
     color: var(--white-color);
 }
 
+.weekday-title a {
+    color: var(--white-color);
+}
+
 .weekday:nth-child(1) .weekday-title,
 .weekday:nth-child(7) .weekday-title {
     background: var(--secundary-color);

@@ -1,0 +1,18 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+<section class="main-content">
+    <h1>{{ weekday }}</h1>
+    <ul>
+        {% for study in studies %}
+            {% include 'studies/partials/subjects.html' %}
+            {% for content in study.subject.content_list.all %}
+                <div>
+                    <input type="checkbox" name="{{ content }}" id="{{ content }}">
+                    <label for="{{ content }}">{{ content }}</label>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</section>
+{% endblock content %}

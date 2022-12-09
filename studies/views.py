@@ -98,3 +98,15 @@ def subject(request, id):
         'subject': subject,
         'content_list': content_list,
     })
+
+
+@login_required(login_url='accounts:login', redirect_field_name='next')
+def weekday(request, weekday):
+    studies = Study.objects.filter(weekday=weekday).order_by('start_time')
+    subjects = Subject.objects.filter(student=request.user)
+
+    return render(request, 'studies/pages/weekday.html', context={
+        'studies': studies,
+        'weekday': weekday,
+        'subjects': subjects
+    })

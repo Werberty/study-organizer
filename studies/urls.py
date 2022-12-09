@@ -13,4 +13,5 @@ urlpatterns = [
         'subject/delete/<int:id>/', views.delete_subject, name='delete_subject'
     ),
     path('subject/<int:id>/', views.subject, name='subject'),
+    path('weekday/<str:weekday>/', views.weekday, name='weekday'),
 ]

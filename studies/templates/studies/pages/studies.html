@@ -96,7 +96,7 @@
                             {% include 'studies/partials/subjects.html' %}
 
                         {% endif %}
-                        {% endfor %}
+                    {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -118,7 +118,9 @@
             </div>
             <div class="weekday">
                 <div class="weekday-title">
-                    <h2>Terça</h2>
+                    <a href="{% url 'studies:weekday' 'Tuesday' %}">
+                        <h2>Terça</h2>
+                    </a>
                 </div>
                 <div class="weekday-content">
                     <ul>
@@ -134,7 +136,9 @@
             </div>
             <div class="weekday">
                 <div class="weekday-title">
-                    <h2>Quarta</h2>
+                    <a href="{% url 'studies:weekday' 'Wednesday' %}">
+                        <h2>Quarta</h2>
+                    </a>
                 </div>
                 <div class="weekday-content">
                     <ul>
