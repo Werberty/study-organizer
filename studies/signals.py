@@ -1,4 +1,4 @@
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 
 from studies.models import Content, Subject
@@ -24,3 +24,21 @@ def content_create(sender, instance, created, *args, **kwargs):
                 subject=instance
             )
             content.save()
+
+
+@receiver(pre_save, sender=Subject)
+def content_update(sender, instance, *args, **kwargs):
+    contents = Content.objects.filter(subject=instance)
+
+    print(contents)
+    if contents:
+        contents.delete()
+
+    content_list = string_to_list(instance.contents)
+
+    for value in content_list:
+        content = Content.objects.create(
+            name=value,
+            subject=instance
+        )
+        content.save()

@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
 from .forms import StudyForm, SubjectForm
-from .models import Content, Study, Subject
+from .models import Study, Subject
 
 
 @login_required(login_url='accounts:login', redirect_field_name='next')
@@ -92,12 +92,28 @@ def delete_subject(request, id):
 @login_required(login_url='accounts:login', redirect_field_name='next')
 def subject(request, id):
     subject = get_object_or_404(Subject, student=request.user, pk=id)
-    content_list = Content.objects.filter(subject=subject)
+    form = SubjectForm(instance=subject)
 
     return render(request, 'studies/pages/subject.html', context={
         'subject': subject,
-        'content_list': content_list,
+        'form': form
     })
+
+
+def subject_update(request, id):
+    if not request.POST:
+        raise Http404()
+
+    subject = get_object_or_404(Subject, student=request.user, pk=id)
+    form = SubjectForm(request.POST, instance=subject)
+
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Assunto editado')
+    else:
+        messages.error(request, 'Erro ao editar')
+
+    return redirect(reverse('studies:subject', kwargs={'id': subject.id}))
 
 
 @login_required(login_url='accounts:login', redirect_field_name='next')

@@ -13,5 +13,8 @@ urlpatterns = [
         'subject/delete/<int:id>/', views.delete_subject, name='delete_subject'
     ),
     path('subject/<int:id>/', views.subject, name='subject'),
+    path(
+        'subject/update/<int:id>/', views.subject_update, name='subject_update'
+    ),
     path('weekday/<str:weekday>/', views.weekday, name='weekday'),
 ]

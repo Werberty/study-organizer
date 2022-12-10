@@ -15,3 +15,8 @@
 .main-content {
     padding: 3rem;
 }
+
+.half-width {
+    width: 50%;
+    margin: auto;
+}

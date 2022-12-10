@@ -3,6 +3,29 @@
 {% block content %}
     <section class="main-content">
         <h1>{{ subject.name }}</h1>
-        <p>{{ subject.contents }}</p>
+
+        {% include 'global/partials/messages.html' %}
+
+        <div class="main-form half-width">
+            <form action="{% url 'studies:subject_update' subject.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-content form-content-grid">
+                    {% for field in form %}
+                    <div class="form-group {{ field.field.widget.attrs.class }}">
+                        {{ field.label_tag }}
+
+                        {{ field }}
+
+                        {{ field.errors }}
+                    </div>
+                    {% endfor %}
+                    <div class="form-content form-content-grid">
+                        <div class="form-group">
+                            <button class="button-generic" type="submit">Editar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </section>
 {% endblock content %}
