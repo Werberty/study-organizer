@@ -1,22 +1,10 @@
-import re
 from collections import defaultdict
 
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
-
-def strong_password(password):
-    regex = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$')
-
-    if not regex.match(password):
-        raise ValidationError((
-            'No mínimo 8 caracteres, '
-            'possuir pelo menos uma letra minuscula, '
-            'uma letra maiúscula e um número'
-        ),
-            code='invalid'
-        )
+from utils.validators import email_is_valid, strong_password
 
 
 class RegisterForm(forms.ModelForm):
@@ -41,6 +29,9 @@ class RegisterForm(forms.ModelForm):
 
     email = forms.CharField(
         label='E-mail',
+        error_messages={
+            'invalid': 'E-mail inválido'
+        },
         widget=forms.EmailInput(
             attrs={
                 'placeholder': 'exemplo@email.com'
@@ -110,6 +101,15 @@ class RegisterForm(forms.ModelForm):
             })
 
         return cleaned_data
+
+    def clean_email(self):
+        email = self.cleaned_data["email"]
+        email_valid = email_is_valid(email)
+        print(email_valid)
+
+        if not email_valid:
+            raise ValidationError('E-mail-inválido')
+        return email
 
 
 class LoginForm(forms.Form):
