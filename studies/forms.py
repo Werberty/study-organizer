@@ -100,7 +100,8 @@ class SubjectForm(forms.ModelForm):
             'contents': forms.Textarea(
                 attrs={
                     'class': 'span-2',
-                    'placeholder': 'Conteúdos da máteria a ser estudada...'
+                    'placeholder':
+                    'Digite os conteúdos a serem estudados separados por -'
                 }
             ),
             'color': forms.Select(
@@ -109,4 +110,7 @@ class SubjectForm(forms.ModelForm):
                     'type': 'color'
                 }
             ),
+        }
+        help_texts = {
+            'contents': 'Ex: Conteudo - Conteúdo 2 - Outro conteúdo'
         }
