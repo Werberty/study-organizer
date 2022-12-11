@@ -29,9 +29,6 @@ class RegisterForm(forms.ModelForm):
 
     email = forms.CharField(
         label='E-mail',
-        error_messages={
-            'invalid': 'E-mail inválido'
-        },
         widget=forms.EmailInput(
             attrs={
                 'placeholder': 'exemplo@email.com'
@@ -94,11 +91,10 @@ class RegisterForm(forms.ModelForm):
         password2 = cleaned_data.get('password2')
 
         if password1 != password2:
-            raise ValidationError({
-                'password': ValidationError(
-                    'Senhas diferentes', code='invalid'
-                )
-            })
+            self._my_errors['password'].append('Senhas diferentes')
+
+        if self._my_errors:
+            raise ValidationError(self._my_errors)
 
         return cleaned_data
 
@@ -108,7 +104,8 @@ class RegisterForm(forms.ModelForm):
         print(email_valid)
 
         if not email_valid:
-            raise ValidationError('E-mail-inválido')
+            self._my_errors['email'].append('E-mail inválido')
+
         return email
 
 
