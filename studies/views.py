@@ -84,7 +84,7 @@ def delete_subject(request, id):
     subject = get_object_or_404(Subject, student=request.user, pk=id)
 
     subject.delete()
-    messages.info(request, 'Assunto deletado')
+    messages.warning(request, 'Assunto deletado')
 
     return redirect(reverse('studies:home'))
 

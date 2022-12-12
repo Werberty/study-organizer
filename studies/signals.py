@@ -24,6 +24,8 @@ def content_update(sender, instance, *args, **kwargs):
 
     if contents:
         contents.delete()
+    else:
+        return
 
     content_list = string_to_list(instance.contents, spliting=' - ')
 

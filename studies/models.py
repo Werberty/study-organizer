@@ -55,3 +55,9 @@ class Content(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+# class historic(models.Model):
+#     study = models.ForeignKey(Study, on_delete=models.CASCADE)
+#     contents_studied = models.ManyToManyField(Content)
+#     date = models.DateField()
