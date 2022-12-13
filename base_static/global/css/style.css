@@ -335,9 +335,8 @@
 }
 
 /* Week studies */
-.main-content h1 {
+.main-content h2 {
     text-align: center;
-    margin-bottom: 2rem;
 }
 
 .main-week-studies {
@@ -489,7 +488,7 @@
 .main-subjects-list h3 {
     margin: 2rem 0 2rem 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 
 .subjects-grid ul {

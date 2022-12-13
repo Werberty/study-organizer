@@ -6,6 +6,10 @@
     display: inline;
 }
 
+.main-title {
+    margin-bottom: 2rem;
+}
+
 /* Class containers */
 .main-container {
     max-width: 120rem;

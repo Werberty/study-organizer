@@ -5,7 +5,7 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const confirmed = confirm('Quer deletar mesmo?');
+            const confirmed = confirm('Deseja deletar?');
 
             if (confirmed) {
                 form.submit();
