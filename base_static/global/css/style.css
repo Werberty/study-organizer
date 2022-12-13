@@ -193,16 +193,11 @@
     position: relative;
 }
 
-.new-study .modal .close-modal {
-    position: absolute;
-    top: 1rem;
-    right: 0;
-}
-
+.new-study .modal .close-modal,
 .new-subject .modal .close-modal {
     position: absolute;
-    top: 1rem;
-    right: 0;
+    top: .5rem;
+    right: .3rem;
 }
 
 .modal .close-modal:hover span {

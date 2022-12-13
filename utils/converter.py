@@ -1,6 +1,11 @@
-def string_to_list(content_list, spliting=' - '):
-    content_list = content_list.split(spliting)
+def string_to_list(contents, spliting=' - '):
+    if not (spliting in contents):
+        return None
+
+    content_list = contents.split(spliting)
+
     list_content = []
+
     for content in content_list:
         list_content.append(content.strip())
 
