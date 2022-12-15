@@ -127,3 +127,7 @@ def weekday(request, weekday):
         'weekday': weekday,
         'subjects': subjects
     })
+
+
+def historic(request):
+    return render(request, 'studies/pages/historic.html')
