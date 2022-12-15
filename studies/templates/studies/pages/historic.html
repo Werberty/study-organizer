@@ -5,14 +5,22 @@
     <h2 class="main-title">Histórico</h2>
     <article class="main-container-month">
         <div class="month-grid">
+            <p>Domingo</p>
+            <p>Segunda</p>
+            <p>Terça</p>
+            <p>Quarta</p>
+            <p>Quinta</p>
+            <p>Sexta</p>
+            <p>Sabado</p>
             {% for weekday in month %}
                 {% for day in weekday %}
                     <div class="day-content">
-                        <h4 class="day-title">{{ day }}</h4>
+                        {% if day != 0 %}
+                            <p class="day-title">{{ day }}</p>
+                        {% endif %}
                     </div>
                 {% endfor %}
             {% endfor %}
-            {% comment %} Row 2 {% endcomment %}
         </div>
     </article>
 </section>

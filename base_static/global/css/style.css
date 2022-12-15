@@ -642,6 +642,13 @@
     grid-template-columns: repeat(7, 1fr);
 }
 
+.month-grid > p {
+    background-color: var(--secundary-color);
+    border: var(--border) solid var(--primary-color);
+    color: var(--white-color);
+    padding: .2rem 1rem;
+}
+
 .day-content {
     width: 100%;
     height: 14rem;

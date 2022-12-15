@@ -7,6 +7,9 @@ def list_days_month(date=datetime.now()):
     year = date_now.year
     month = date_now.month
 
+    # Configurar para semana começar no Domingo
+    calendar.setfirstweekday(6)
+
     calendario = calendar.monthcalendar(year, month)
 
     return calendario
