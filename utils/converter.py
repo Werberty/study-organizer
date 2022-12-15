@@ -4,9 +4,6 @@ def string_to_list(contents, spliting=' - '):
 
     content_list = contents.split(spliting)
 
-    list_content = []
-
-    for content in content_list:
-        list_content.append(content.strip())
+    list_content = [content.strip() for content in content_list]
 
     return list_content
