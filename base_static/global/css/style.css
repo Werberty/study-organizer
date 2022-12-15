@@ -632,6 +632,27 @@
     display: block;
 }
 
+/* Historic */
+.main-container-month {
+    width: 100%;
+}
+
+.month-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-content {
+    width: 100%;
+    height: 14rem;
+    border: var(--border) solid var(--primary-color);
+    background: var(--white-color);
+}
+
+.day-title {
+    margin: .2rem 1rem;
+}
+
 @keyframes effect {
     0% {
         transform: translateX(100%);

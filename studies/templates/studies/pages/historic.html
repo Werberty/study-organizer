@@ -3,5 +3,17 @@
 {% block content %}
 <section class="main-content">
     <h2 class="main-title">Histórico</h2>
+    <article class="main-container-month">
+        <div class="month-grid">
+            {% for weekday in month %}
+                {% for day in weekday %}
+                    <div class="day-content">
+                        <h4 class="day-title">{{ day }}</h4>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% comment %} Row 2 {% endcomment %}
+        </div>
+    </article>
 </section>
 {% endblock content %}

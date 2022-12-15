@@ -4,6 +4,8 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
+from utils.make_month import list_days_month
+
 from .forms import StudyForm, SubjectForm
 from .models import Study, Subject
 
@@ -130,4 +132,7 @@ def weekday(request, weekday):
 
 
 def historic(request):
-    return render(request, 'studies/pages/historic.html')
+    month = list_days_month()
+    return render(request, 'studies/pages/historic.html', context={
+        'month': month
+    })
