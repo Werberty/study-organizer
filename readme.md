@@ -26,13 +26,17 @@ Como atualmente alguns amigos estão estudando para concurso, resolvi fazer uma 
 - [x] Planejar estudos na semana
 - [x] Horário de estudo do assunto
 - [x] Deletar assuntos e estudos adicionados
+- [x] Editar assuntos adicionados
+- [x] Conteúdos do assunto estudados
+- [x] Gerar conteúdos separados relacionados ao assunto
+- [ ] Cadastrar matérias estudadas no dia
 - [ ] Histórico mensal de estudos
-- [ ] Conteúdos do assunto estudados
 
 
 <h2 id="layout">🖼️ Layout</h2>
 
 <h1 align="center">
+<img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/study-organizer-cover.png" />
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/study-organizer.gif" />
 </h1>
 
@@ -44,3 +48,4 @@ Como atualmente alguns amigos estão estudando para concurso, resolvi fazer uma 
 - [Django](https://www.djangoproject.com/start/overview/)
 - [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 - [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JAVSCRIPT]()
