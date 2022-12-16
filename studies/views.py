@@ -7,7 +7,7 @@ from django.urls import reverse
 from utils.make_month import list_days_month
 
 from .forms import StudyForm, SubjectForm
-from .models import Study, Subject
+from .models import Historic, Study, Subject
 
 
 @login_required(login_url='accounts:login', redirect_field_name='next')
@@ -131,8 +131,11 @@ def weekday(request, weekday):
     })
 
 
-def historic(request):
+def historic_view(request):
+    historics = Historic.objects.all()
+
     month = list_days_month()
     return render(request, 'studies/pages/historic.html', context={
-        'month': month
+        'month': month,
+        'historics': historics
     })

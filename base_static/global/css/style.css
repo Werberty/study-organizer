@@ -651,7 +651,7 @@
 
 .day-content {
     width: 100%;
-    height: 14rem;
+    min-height: 12rem;
     border: var(--border) solid var(--primary-color);
     background: var(--white-color);
 }
@@ -659,6 +659,19 @@
 .day-title {
     margin: .2rem 1rem;
 }
+
+.day-content .weekday-subject {
+    margin: .5rem;
+    font-size: 1.6rem;
+    padding: .5rem;
+}
+
+.list-content {
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
 
 @keyframes effect {
     0% {

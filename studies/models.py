@@ -57,7 +57,7 @@ class Content(models.Model):
         return self.name
 
 
-class historic(models.Model):
+class Historic(models.Model):
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     contents_studied = models.ManyToManyField(Content)
     date = models.DateTimeField(auto_now=True)

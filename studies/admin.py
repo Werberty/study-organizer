@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Content, Study, Subject, historic
+from .models import Content, Historic, Study, Subject
 
 
 @admin.register(Subject)
@@ -18,6 +18,6 @@ class ContentAdmin(admin.ModelAdmin):
     ...
 
 
-@admin.register(historic)
+@admin.register(Historic)
 class HistoricAdmin(admin.ModelAdmin):
-    ...
+    list_display = ('study', 'date')
