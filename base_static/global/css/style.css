@@ -634,7 +634,11 @@
 
 /* Historic */
 .main-container-month {
-    width: 100%;
+    width: 80%;
+    margin: auto;
+    border: solid var(--primary-color);
+    border-left: var(--border);
+    border-top: var(--border);
 }
 
 .month-grid {
@@ -644,15 +648,19 @@
 
 .month-grid > p {
     background-color: var(--secundary-color);
-    border: var(--border) solid var(--primary-color);
+    border: solid var(--primary-color);
     color: var(--white-color);
+    border-right: var(--border);
+    border-bottom: var(--border);
     padding: .2rem 1rem;
 }
 
 .day-content {
     width: 100%;
-    min-height: 12rem;
-    border: var(--border) solid var(--primary-color);
+    min-height: 11rem;
+    border: solid var(--primary-color);
+    border-right: var(--border);
+    border-bottom: var(--border);
     background: var(--white-color);
 }
 
@@ -664,6 +672,10 @@
     margin: .5rem;
     font-size: 1.6rem;
     padding: .5rem;
+}
+
+.day-content .subject-title {
+    text-align: center;
 }
 
 .list-content {
