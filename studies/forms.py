@@ -3,7 +3,7 @@ from collections import defaultdict
 from django import forms
 from django.core.exceptions import ValidationError
 
-from .models import Study, Subject
+from .models import Historic, Study, Subject
 
 
 class StudyForm(forms.ModelForm):
@@ -113,4 +113,20 @@ class SubjectForm(forms.ModelForm):
         }
         help_texts = {
             'contents': 'Ex: Conteudo - Conteúdo 2 - Outro conteúdo'
+        }
+
+
+class HistoricForm(forms.ModelForm):
+    class Meta:
+        model = Historic
+        fields = '__all__'
+        labels = {
+            'date': 'Data'
+        }
+        widgets = {
+            'date': forms.DateInput(
+                attrs={
+                    'type': 'date'
+                }
+            )
         }

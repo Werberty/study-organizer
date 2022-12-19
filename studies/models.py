@@ -60,4 +60,4 @@ class Content(models.Model):
 class Historic(models.Model):
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     contents_studied = models.ManyToManyField(Content)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateField()

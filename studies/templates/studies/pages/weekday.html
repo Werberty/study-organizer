@@ -23,20 +23,30 @@
                     {% endif %}
                 </div>
                 {% if study.subject.content_list.all %}
-                <div class="form-content">
-                    {% for content in study.subject.content_list.all %}
-                        <div class="content-item">
-                            <label for="{{ content }}">
-                                <input type="checkbox" name="{{ content }}" id="{{ content }}">
-                                <span class="checkmark"></span>
-                                {{ content }}
-                            </label>
+                    <form class="form-content" action="" method="POST">
+                        <input type="hidden" name="subject" value="{{ study.subject.id }}">
+                        
+                        <div>
+                            {% for content in study.subject.content_list.all %}
+                                <div class="content-item">
+                                    <label for="{{ content }}">
+                                        <input type="checkbox" name="{{ content }}" id="{{ content }}">
+                                        <span class="checkmark"></span>
+                                        {{ content }}
+                                    </label>
+                                </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
-                </div>
-                <div class="form-group center">
-                    <button class="button-generic" type="submit">salvar</button>
-                </div>
+
+                        <div>
+                            {{ form.date.label_tag }}
+                            {{ form.date }}
+                        </div>
+
+                        <div class="form-group center">
+                            <button class="button-generic" type="submit">salvar</button>
+                        </div>
+                    </form>
                 {% endif %}
             </li>
         {% endfor %}

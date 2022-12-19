@@ -6,7 +6,7 @@ from django.urls import reverse
 
 from utils.make_month import list_days_month
 
-from .forms import StudyForm, SubjectForm
+from .forms import HistoricForm, StudyForm, SubjectForm
 from .models import Historic, Study, Subject
 
 
@@ -123,11 +123,13 @@ def weekday(request, weekday):
     studies = Study.objects.filter(
         subject__student=request.user, weekday=weekday).order_by('start_time')
     subjects = Subject.objects.filter(student=request.user)
+    form = HistoricForm()
 
     return render(request, 'studies/pages/weekday.html', context={
         'studies': studies,
         'weekday': weekday,
-        'subjects': subjects
+        'subjects': subjects,
+        'form': form
     })
 
 
