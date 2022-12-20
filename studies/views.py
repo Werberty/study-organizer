@@ -141,3 +141,19 @@ def historic_view(request):
         'month': month,
         'historics': historics
     })
+
+
+def historic_create(request):
+    if not request.POST:
+        raise Http404()
+
+    form = HistoricForm(request.POST)
+    print(request.POST)
+
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Salvo no histórico')
+    else:
+        messages.error(request, 'Erro no formulário')
+
+    return redirect(reverse('studies:home'))

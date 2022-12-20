@@ -23,23 +23,17 @@
                     {% endif %}
                 </div>
                 {% if study.subject.content_list.all %}
-                    <form class="form-content" action="" method="POST">
-                        <input type="hidden" name="subject" value="{{ study.subject.id }}">
+                    <form class="form-content" action="{% url 'studies:historic_create' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="study" value="{{ study.id }}">
+
+                        <select name="contents_studied" id="" multiple>
+                            {% for content in study.subject.content_list.all %}
+                                <option value="{{ content.id }}">{{ content }}</option>
+                            {% endfor %}
+                        </select>
                         
                         <div>
-                            {% for content in study.subject.content_list.all %}
-                                <div class="content-item">
-                                    <label for="{{ content }}">
-                                        <input type="checkbox" name="{{ content }}" id="{{ content }}">
-                                        <span class="checkmark"></span>
-                                        {{ content }}
-                                    </label>
-                                </div>
-                            {% endfor %}
-                        </div>
-
-                        <div>
-                            {{ form.date.label_tag }}
                             {{ form.date }}
                         </div>
 

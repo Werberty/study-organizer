@@ -7,6 +7,7 @@ app_name = 'studies'
 urlpatterns = [
     path('', views.home, name='home'),
     path('historic/', views.historic_view, name='historic'),
+    path('historic/create/', views.historic_create, name='historic_create'),
     path('study/new/', views.create_study, name='create_study'),
     path('subject/new/', views.create_subject, name='create_subject'),
     path('study/delete/<int:id>/', views.delete_study, name='delete_study'),
