@@ -46,6 +46,7 @@
 
 .dropdown-menu {
     display: none;
+    z-index: 2;
 }
 
 .navbar {
@@ -80,11 +81,12 @@
     position: absolute;
     width: 12.6rem;
     padding: 1rem;
+    border-radius: 3px;
     margin-top: 1rem;
     font-size: 1.5rem;
-    border: var(--border) solid gray;
+    border: var(--border) solid lightgrey;
     background: var(--white-color);
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    box-shadow: 0 0.5rem .8rem rgb(0 0 0 / 15%);
 }
 
 .logout-link span{
@@ -101,6 +103,7 @@
 
 .button-generic {
     border: var(--border) solid var(--primary-color);
+    border-radius: 3px;
     background: var(--white-color);
     cursor: pointer;
     font-size: 1.6rem;
@@ -108,6 +111,7 @@
     text-transform: uppercase;
     padding: .5rem 1rem;
     transition: all 300ms ease-in-out;
+
 }
 
 .button-generic:hover {
@@ -135,37 +139,42 @@
     display: inline-block;
     color: var(--primary-color);
     text-transform: uppercase;
-    padding: 0rem 0.6rem;
+    transition: all 300ms ease-in-out;
 }
 
 .new-study .open-modal p, 
 .new-subject .open-modal p {
-    font-size: 1.3rem;
-}
-
-.new-study .open-modal span, 
-.new-subject .open-modal span {
-    border-right: 0.1rem solid var(--primary-color);
-    transition: all 300ms ease-in-out;
+    font-weight: 700;
+    font-size: 1.4rem;
 }
 
 .new-study .button,
 .new-subject .button{
-    border: var(--border) solid var(--primary-color);
     background: var(--white-color);
     margin-bottom: 1rem;
     cursor: pointer;
     width: 15.7rem;
-
+    padding: .5rem;
+    box-shadow: 0px 1px 4px 1px rgb(0 0 0 / 34%);
+    border-radius: 3px;
+    transition: all 300ms ease-in-out;
+    
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: space-evenly;
 }
 
-.new-study .button:hover span, 
-.new-subject .button:hover span {
-    background-color: var(--primary-color);
+.new-subject .button:hover .button-title, 
+.new-subject .button:hover .button-icon,
+.new-study .button:hover .button-title, 
+.new-study .button:hover .button-icon {
     color: var(--white-color);
+}
+
+.new-subject .button:hover, 
+.new-study .button:hover {
+    background-color: var(--primary-color);
 }
 
 /* Modal new study e subject */
@@ -203,26 +212,28 @@
 .new-study .modal .close-modal,
 .new-subject .modal .close-modal {
     position: absolute;
-    top: .5rem;
-    right: .3rem;
+    top: .6rem;
+    right: .4rem;
 }
 
 .modal .close-modal:hover span {
     cursor: pointer;
-    color: var(--secundary-color);
+    color: var(--color-error-dark);
 }
 
 .modal .content-modal {
     width: 30%;
     height: auto;
     background-color: var(--white-color);
-    border: var(--border) solid var(--primary-color);
+    box-shadow: 0px 1px 4px 1px rgb(0 0 0 / 34%);
+    border-radius: 3px;
     overflow: auto;
 }
 
 .close-modal span {
     border: none;
     padding: none;
+    transition: all 300ms ease-in-out;
 }
 
 /* Forms */
@@ -352,22 +363,24 @@
 
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 0.6rem;
 }
 
 .weekday {
-    width: 15rem;
-    border: var(--border) solid var(--primary-color);
+    width: 15.7rem;
     background: var(--white-color);
+    box-shadow: 0px 1px 4px 1px rgb(0 0 0 / 34%);
+    border-radius: 3px;
 }
+
 
 .weekday-title {
     text-align: center;
-    border-bottom: var(--border) solid var(--primary-color);
     padding: .5rem;
     background: var(--primary-color);
     color: var(--white-color);
+    border-radius: 3px 3px 0 0;
 }
 
 .weekday-title a {
@@ -414,6 +427,7 @@
     justify-content: space-evenly;
     align-items: center;
 
+    border-radius: 3px;
     transition: all 300ms ease-in-out;
 }
 
@@ -528,6 +542,8 @@
     justify-content: space-evenly;
     align-items: center;
     transition: all 1s ease-in-out;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px 1px rgb(0 0 0 / 5%);
 }
 
 .main-subject span {
