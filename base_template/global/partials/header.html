@@ -24,9 +24,17 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li class="dropdown-item">
-                        <a class="logout-link" href="{% url 'accounts:logout' %}">
+                        <a class="logout-link" href="{% url 'studies:historic' %}">
                             <span class="material-symbols-outlined">
-                            logout
+                                calendar_month
+                            </span>
+                            Histórico
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="logout-link" href="{% url 'accounts:logout' %}">
+                            <span class="material-symbols-outlined icon-logout">
+                                logout
                             </span>
                             Sair
                         </a>

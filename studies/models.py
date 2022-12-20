@@ -47,7 +47,7 @@ class Study(models.Model):
 
 
 class Content(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=70)
     subject = models.ForeignKey(
         Subject, on_delete=models.CASCADE,
         related_name='content_list'

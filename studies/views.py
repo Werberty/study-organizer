@@ -133,6 +133,7 @@ def weekday(request, weekday):
     })
 
 
+@login_required(login_url='accounts:login', redirect_field_name='next')
 def historic_view(request):
     historics = Historic.objects.all()
 
@@ -143,12 +144,12 @@ def historic_view(request):
     })
 
 
-def historic_create(request):
+@login_required(login_url='accounts:login', redirect_field_name='next')
+def historic_create(request, weekday):
     if not request.POST:
         raise Http404()
 
     form = HistoricForm(request.POST)
-    print(request.POST)
 
     if form.is_valid():
         form.save()
@@ -156,4 +157,4 @@ def historic_create(request):
     else:
         messages.error(request, 'Erro no formulário')
 
-    return redirect(reverse('studies:home'))
+    return redirect(reverse('studies:weekday', kwargs={'weekday': weekday}))

@@ -3,47 +3,54 @@
 {% block content %}
 <section class="main-content">
     <h2 class="main-title">{{ weekday }}</h2>
-    <p class="sub-title center">Salve aqui seus estudos diários</p>
-    <ul class="main-container-studies">
-        {% for study in studies %}
-            <li class="subjects-contents {{ study.subject.color }}">
-                <div class="subject-content center">
-                    <div class="subject-title">
-                        {{ study.subject }}
-                    </div>
-                    
-                    {% if study.start_time and study.end_time %}
-                    <div class="subject-time">
-                        {{ study.start_time }} - {{ study.end_time }}
-                    </div>
-                    {% elif study.start_time %}
-                    <div class="subject-time">
-                        {{ study.start_time }}
-                    </div>
-                    {% endif %}
-                </div>
-                {% if study.subject.content_list.all %}
-                    <form class="form-content" action="{% url 'studies:historic_create' %}" method="POST">
-                        {% csrf_token %}
-                        <input type="hidden" name="study" value="{{ study.id }}">
 
-                        <select name="contents_studied" id="" multiple>
-                            {% for content in study.subject.content_list.all %}
-                                <option value="{{ content.id }}">{{ content }}</option>
-                            {% endfor %}
-                        </select>
+    {% include 'global/partials/messages.html' %}
+
+    {% if studies %}
+        <p class="sub-title center">Salve aqui seus estudos diários</p>
+        <ul class="main-container-studies">
+            {% for study in studies %}
+                <li class="subjects-contents {{ study.subject.color }} weekday-detail-study">
+                    <div class="subject-content center">
+                        <div class="subject-title">
+                            {{ study.subject }}
+                        </div>
                         
-                        <div>
-                            {{ form.date }}
+                        {% if study.start_time and study.end_time %}
+                        <div class="subject-time">
+                            {{ study.start_time }} - {{ study.end_time }}
                         </div>
+                        {% elif study.start_time %}
+                        <div class="subject-time">
+                            {{ study.start_time }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% if study.subject.content_list.all %}
+                        <form class="form-content form-weekday-study" action="{% url 'studies:historic_create' study.weekday %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="study" value="{{ study.id }}">
 
-                        <div class="form-group center">
-                            <button class="button-generic" type="submit">salvar</button>
-                        </div>
-                    </form>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+                            <select name="contents_studied" id="" multiple>
+                                {% for content in study.subject.content_list.all %}
+                                    <option value="{{ content.id }}">{{ content }}</option>
+                                {% endfor %}
+                            </select>
+                            
+                            <div>
+                                {{ form.date }}
+                            </div>
+
+                            <div class="form-group center">
+                                <button class="button-generic" type="submit">salvar</button>
+                            </div>
+                        </form>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="sub-title center">Você não possui estudos programados para esse dia...</p>
+    {% endif %}
 </section>
 {% endblock content %}

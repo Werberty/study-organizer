@@ -62,7 +62,9 @@
 }
 
 .navbar.active .dropdown-menu{
-    display: block;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
 }
 
 .arrow_drop_down {
@@ -85,7 +87,12 @@
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
 }
 
-.logout-link span {
+.logout-link span{
+    font-size: 1.9rem;
+    color: var(--color-info-dark);
+}
+
+.logout-link .icon-logout {
     font-size: 1.9rem;
     color: var(--color-error-dark);
 }
@@ -575,6 +582,7 @@
 
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
     gap: .5rem;
 }
 
@@ -585,51 +593,10 @@
     cursor: pointer;
 }
 
-.content-item input {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    cursor: pointer;
-}
-
-.checkmark {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 2rem;
-    height: 2rem;
-    border: .1rem solid gray;
-    border-radius: .2rem;
-    background-color: #eee;
-}
-
-.content-item:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-.content-item input:checked ~ .checkmark {
-    background-color: var(--secundary-color);
-}
-
-.content-item .checkmark::after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: .6rem;
-    top: .1rem;
-    width: .5rem;
-    height: 1rem;
-    border: solid var(--white-color);
-    border-width: 0 .3rem .3rem 0;
-    -webkit-tranform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.content-item input:checked ~ .checkmark::after {
-    display: block;
+.form-weekday-study select,
+.form-weekday-study input {
+    padding: .5rem;
+    max-width: 100%;
 }
 
 /* Historic */
