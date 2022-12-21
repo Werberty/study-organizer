@@ -135,7 +135,7 @@ def weekday(request, weekday):
 
 @login_required(login_url='accounts:login', redirect_field_name='next')
 def historic_view(request):
-    historics = Historic.objects.all()
+    historics = Historic.objects.filter(study__subject__student=request.user)
 
     month = list_days_month()
     return render(request, 'studies/pages/historic.html', context={
