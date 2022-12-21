@@ -573,7 +573,8 @@
     height: auto;
     margin: auto;
     background-color: var(--white-color);
-    border: var(--border) solid var(--primary-color);
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgb(66 66 66 / 8%), 0 1px 3px 1px rgb(66 66 66 / 16%);
     overflow: auto;
 }
 
