@@ -31,13 +31,15 @@
                             {% csrf_token %}
                             <input type="hidden" name="study" value="{{ study.id }}">
 
-                            <select name="contents_studied" id="" multiple>
-                                {% for content in study.subject.content_list.all %}
-                                    <option value="{{ content.id }}">{{ content }}</option>
-                                {% endfor %}
-                            </select>
+                            <div class="container-form">
+                                <select name="contents_studied" id="" multiple>
+                                    {% for content in study.subject.content_list.all %}
+                                        <option value="{{ content.id }}">{{ content }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
                             
-                            <div>
+                            <div class="container-form">
                                 {{ form.date }}
                             </div>
 
