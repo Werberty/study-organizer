@@ -589,28 +589,29 @@
 }
 
 .main-container-studies {
-    width: 50%;
+    width: 100%;
     margin: auto;
 
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
+    justify-content: center;
     gap: calc(var(--gap) / 2);
 }
 
 .subjects-contents {
+    width: 50rem;
     padding: 1rem;
     border-radius: 3px;
     box-shadow: 0px 1px 1px 1px rgb(0 0 0 / 5%);
 }
 
 .subjects-contents .form-content {
-    width: 50%;
     margin: 1rem auto;
 
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: .5rem;
+    gap: 1rem;
 }
 
 .content-item {
@@ -620,28 +621,38 @@
     cursor: pointer;
 }
 
-.container-form {
-    height: auto;
-}
-
 .form-weekday-study select,
 .form-weekday-study input {
+    overflow-y: hidden;
     padding: .5rem;
-    max-width: 100%;
+    max-width: 40rem;
     outline: unset;
     border: 1px solid black;
     background-color: rgba(255, 255, 255, 0);
-    height: auto;
-    /* overflow-x: visible; */
+}
+.form-weekday-study select {
+    text-align: center;
 }
 
 .form-weekday-study .button-generic {
     background-color: rgba(255, 255, 255, 0);
 }
 
+.form-group-content {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+}
+
+.form-group-content label{
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: .5rem;
+}
+
 /* Historic */
 .main-container-month {
-    width: 80%;
+    width: 90%;
     margin: auto;
     box-shadow: 0 1px 1px 0 rgb(66 66 66 / 8%), 0 1px 3px 1px rgb(66 66 66 / 16%);
 }
@@ -721,16 +732,16 @@
 
 .day-content .subject-title {
     text-align: center;
+    margin-bottom: .5rem;
 }
 
 .list-content {
     font-size: 1.4rem;
-    text-align: center;
     color: var(--primary-color);
 
     display: flex;
-    text-align: center;
-    justify-content: center;
+    gap: .5rem;
+    justify-content: left;
 }
 
 .list-content span {

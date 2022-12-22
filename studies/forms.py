@@ -121,7 +121,7 @@ class HistoricForm(forms.ModelForm):
         model = Historic
         fields = '__all__'
         labels = {
-            'date': 'Data'
+            'date': 'Data do estudo'
         }
         widgets = {
             'date': forms.DateInput(

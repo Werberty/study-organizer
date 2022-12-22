@@ -28,11 +28,9 @@
                                             </div>
                                             
                                             {% for content in historic.contents_studied.all %}
-                                                <div class="list-content"><span class="material-symbols-outlined">
-                                                    <span class="material-symbols-sharp">
-                                                        remove
-                                                        </span>
-                                                    </span><p>{{ content }}</p></div>
+                                                <div class="list-content">
+                                                    ● <p>{{ content }}</p>
+                                                </div>
                                             {% endfor %}
                                         </div>
                                     </li>
