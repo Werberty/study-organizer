@@ -16,7 +16,6 @@ def content_create(sender, instance, created, *args, **kwargs):
                     name=value,
                     subject=instance
                 )
-                content.full_clean()
                 content.save()
         else:
             return
@@ -37,7 +36,6 @@ def content_update(sender, instance, *args, **kwargs):
                     name=value,
                     subject=instance
                 )
-                content.full_clean()
                 content.save()
         else:
             return

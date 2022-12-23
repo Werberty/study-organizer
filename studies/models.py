@@ -17,9 +17,9 @@ class Subject(models.Model):
 
     student = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=True, null=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=155)
     color = models.CharField(max_length=8, choices=CHOICES, default='azul')
-    contents = models.TextField(blank=True, null=True)
+    contents = models.TextField(blank=True, null=True, max_length=1200)
 
     def __str__(self):
         return self.name
