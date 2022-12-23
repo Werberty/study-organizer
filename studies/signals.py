@@ -30,15 +30,17 @@ def content_update(sender, instance, *args, **kwargs):
     if contents:
         contents.delete()
 
-    content_list = string_to_list(instance.contents, spliting=' - ')
-    print(content_list)
+        content_list = string_to_list(instance.contents, spliting=' - ')
+        print(content_list)
 
-    if content_list:
-        for value in content_list:
-            content = Content.objects.create(
-                name=value,
-                subject=instance
-            )
-            content.save()
+        if content_list:
+            for value in content_list:
+                content = Content.objects.create(
+                    name=value,
+                    subject=instance
+                )
+                content.save()
+        else:
+            return
     else:
         return
