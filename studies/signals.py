@@ -9,7 +9,6 @@ from utils.converter import string_to_list
 def content_create(sender, instance, created, *args, **kwargs):
     if created:
         content_list = string_to_list(instance.contents, spliting=' - ')
-        print(content_list)
 
         if content_list:
             for value in content_list:
@@ -17,6 +16,7 @@ def content_create(sender, instance, created, *args, **kwargs):
                     name=value,
                     subject=instance
                 )
+                content.full_clean()
                 content.save()
         else:
             return
@@ -25,13 +25,11 @@ def content_create(sender, instance, created, *args, **kwargs):
 @receiver(pre_save, sender=Subject)
 def content_update(sender, instance, *args, **kwargs):
     contents = Content.objects.filter(subject=instance)
-    print('update')
 
     if contents:
         contents.delete()
 
         content_list = string_to_list(instance.contents, spliting=' - ')
-        print(content_list)
 
         if content_list:
             for value in content_list:
@@ -39,6 +37,7 @@ def content_update(sender, instance, *args, **kwargs):
                     name=value,
                     subject=instance
                 )
+                content.full_clean()
                 content.save()
         else:
             return

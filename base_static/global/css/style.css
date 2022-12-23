@@ -122,6 +122,11 @@
 
 .button-generic:focus {
     border: var(--border) solid var(--secundary-color);
+    box-shadow: -1px 1px 1px 1px rgb(0 0 0 / 22%);
+}
+
+.button-generic:focus-visible {
+    outline: none;
 }
 
 /* Button New Study e new subject */
@@ -279,9 +284,17 @@
     background-size: 3rem 3rem;
 }
 
-.form-group select:focus {
-    border: var(--border) solid var(--secundary-color);
+.form-group select:focus, 
+.form-group input:focus, 
+.form-group textarea:focus {
+    box-shadow: -1px 1px 1px 1px rgb(0 0 0 / 22%);
 }
+
+.form-group select:focus-visible, 
+.form-group input:focus-visible, 
+.form-group textarea:focus-visible {
+    outline: none;
+} 
 
 .form-group option {
     font-size: 1.5rem;
@@ -427,6 +440,7 @@
 .subject-content {
     display: flex;
     flex-flow: column nowrap;
+    width: 100%;
 }
 
 .weekday-subject {
