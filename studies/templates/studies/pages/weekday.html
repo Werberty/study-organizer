@@ -24,6 +24,10 @@
                         <div class="subject-time">
                             {{ study.start_time }}
                         </div>
+                        {% else %}
+                        <div class="subject-time-hidden">
+                            
+                        </div>
                         {% endif %}
                     </div>
                     {% if study.subject.content_list.all %}
@@ -31,7 +35,7 @@
                             {% csrf_token %}
                             <input type="hidden" name="study" value="{{ study.id }}">
 
-                            <div class="form-group-content">
+                            <div class="form-group-content select">
                                 <label for="contents_studied">Conteúdos estudados:</label>
                                 <select name="contents_studied" id="contents_studied" multiple size="{{ study.subject.content_list.all.count }}">
                                     {% for content in study.subject.content_list.all %}

@@ -588,6 +588,10 @@
     margin-bottom: 1rem;
 }
 
+.subject-time-hidden {
+    height: 2.8rem;
+}
+
 .main-container-studies {
     width: 100%;
     margin: auto;
@@ -602,7 +606,9 @@
     width: 50rem;
     padding: 1rem;
     border-radius: 3px;
-    box-shadow: 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 1px 0 rgb(66 66 66 / 8%), 0 1px 3px 1px rgb(66 66 66 / 16%);
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .subjects-contents .form-content {
@@ -611,6 +617,8 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
     gap: 1rem;
 }
 
@@ -629,6 +637,7 @@
     outline: unset;
     border: 1px solid black;
     background-color: rgba(255, 255, 255, 0);
+    border-radius: 3px;
 }
 .form-weekday-study select {
     text-align: center;
@@ -648,6 +657,14 @@
     display: block;
     font-size: 1.6rem;
     margin-bottom: .5rem;
+}
+
+.form-group-content.select {
+    flex-grow: 1;
+}
+
+.form-group-content .button-generic:hover {
+    color: var(--primary-color);
 }
 
 /* Historic */
