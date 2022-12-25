@@ -1,7 +1,7 @@
 {% extends 'global/base.html' %}
 
 {% block content %}
-    <section class="main-content">
+    <section class="main-content main-subject-detail">
         <h2 class="main-title">{{ subject.name }}</h2>
 
         {% include 'global/partials/messages.html' %}
@@ -30,5 +30,19 @@
                 </div>
             </form>
         </div>
+        
+        {% if subject.content_list.all %}
+            <div class="main-content-list">
+                <h3>Lista de conteúdos:</h3>
+                <ul class="content-list">
+                    {% for content in subject.content_list.all %}
+                        <li class="content-item">
+                            <span>●</span>
+                            <p>{{ content }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
     </section>
 {% endblock content %}
