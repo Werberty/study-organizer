@@ -23,11 +23,13 @@ def content_create(sender, instance, created, *args, **kwargs):
 
 @receiver(pre_save, sender=Subject)
 def content_update(sender, instance, *args, **kwargs):
-    contents = Content.objects.filter(subject=instance)
+    old_instance = Content.objects.filter(subject=instance)
+    subject = Subject.objects.filter(pk=instance.pk).first()
 
-    if contents:
-        contents.delete()
+    if old_instance:
+        old_instance.delete()
 
+    if subject:
         content_list = string_to_list(instance.contents, spliting=' - ')
 
         if content_list:
@@ -39,5 +41,3 @@ def content_update(sender, instance, *args, **kwargs):
                 content.save()
         else:
             return
-    else:
-        return
