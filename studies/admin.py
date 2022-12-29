@@ -20,4 +20,4 @@ class ContentAdmin(admin.ModelAdmin):
 
 @admin.register(Historic)
 class HistoricAdmin(admin.ModelAdmin):
-    list_display = ('study', 'date')
+    list_display = ('subject', 'date')

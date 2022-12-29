@@ -58,6 +58,7 @@ class Content(models.Model):
 
 
 class Historic(models.Model):
-    study = models.ForeignKey(Study, on_delete=models.CASCADE)
+    subject = models.ForeignKey(
+        Subject, on_delete=models.DO_NOTHING)
     contents_studied = models.ManyToManyField(Content)
     date = models.DateField()

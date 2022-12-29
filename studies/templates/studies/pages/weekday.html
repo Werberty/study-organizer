@@ -33,7 +33,7 @@
                     {% if study.subject.content_list.all %}
                         <form class="form-content form-weekday-study" action="{% url 'studies:historic_create' study.weekday %}" method="POST">
                             {% csrf_token %}
-                            <input type="hidden" name="study" value="{{ study.id }}">
+                            <input type="hidden" name="subject" value="{{ study.subject.id }}">
 
                             <div class="form-group-content select">
                                 <label for="contents_studied">Conteúdos estudados:</label>

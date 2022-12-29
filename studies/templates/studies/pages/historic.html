@@ -21,10 +21,10 @@
                         <ul>
                             {% for historic in historics %}
                                 {% if historic.date.day == day %}
-                                    <li class="weekday-subject {{ historic.study.subject.color }}">
+                                    <li class="weekday-subject {{ historic.subject.color }}">
                                         <div class="subject-content">
                                             <div class="subject-title">
-                                                {{ historic.study.subject }}
+                                                {{ historic.subject }}
                                             </div>
                                             
                                             {% for content in historic.contents_studied.all %}
