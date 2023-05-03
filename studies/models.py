@@ -59,6 +59,8 @@ class Content(models.Model):
 
 class Historic(models.Model):
     subject = models.ForeignKey(
-        Subject, on_delete=models.DO_NOTHING)
+        Subject, on_delete=models.SET_NULL, null=True)
+    subject_name = models.CharField(max_length=155, blank=True, null=True)
     contents_studied = models.ManyToManyField(Content)
+    contents_studied_list = models.JSONField(blank=True, null=True)
     date = models.DateField()

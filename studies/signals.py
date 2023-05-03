@@ -1,3 +1,4 @@
+# from django.core.exceptions import ValidationError
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 
@@ -16,9 +17,8 @@ def content_create(sender, instance, created, *args, **kwargs):
                     name=value,
                     subject=instance
                 )
+                content.full_clean()
                 content.save()
-        else:
-            return
 
 
 @receiver(pre_save, sender=Subject)
@@ -38,6 +38,5 @@ def content_update(sender, instance, *args, **kwargs):
                     name=value,
                     subject=instance
                 )
+                content.full_clean()
                 content.save()
-        else:
-            return

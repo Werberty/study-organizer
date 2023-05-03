@@ -1,5 +1,5 @@
 def string_to_list(contents, spliting=' - '):
-    if not (spliting in contents):
+    if spliting not in contents:
         return None
 
     content_list = contents.split(spliting)

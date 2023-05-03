@@ -137,9 +137,10 @@ def weekday(request, weekday):
 def historic_view(request):
     historics = Historic.objects.filter(subject__student=request.user)
 
-    month = list_days_month()
+    month, month_name = list_days_month()
     return render(request, 'studies/pages/historic.html', context={
         'month': month,
+        'month_name': month_name,
         'historics': historics
     })
 

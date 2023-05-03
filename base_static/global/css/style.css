@@ -604,6 +604,7 @@
 /* Weekday detail */
 .sub-title {
     margin-bottom: 1rem;
+    color: var(--secundary-color);
 }
 
 .subject-time-hidden {
